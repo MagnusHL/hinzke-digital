@@ -1,13 +1,13 @@
 # Hinzke Digital
 
-Digitale Produkte & Beratung von Magnus Hinzke. Eigenständiges Geschäftsfeld neben dem Druckerei-Kerngeschäft (hinzke.de / Folger Hinzke GmbH).
+Digitale Produkte & Beratung von Magnus Hinzke. Eigenständiges Geschäftsfeld neben dem Druckerei-Kerngeschäft (hinzke.de / Volker Hinzke GmbH).
 
 ## Projektüberblick
 
 - **Was**: Website zum Verkauf digitaler Produkte (Webseiten-Pakete) und Modul-Übersicht für KI/Digitalisierung
 - **Zielgruppe**: KMU / Mittelstand, bestehende Hinzke-Druckkunden, Neukunden
 - **Herkunft**: Inhalte von l3dynamics.de (wird eingestellt) werden übernommen und erweitert
-- **Abrechnung**: Erstmal über Folger Hinzke GmbH, später ggf. trennbar
+- **Abrechnung**: Erstmal über Volker Hinzke GmbH, später ggf. trennbar
 - **Kein Login/Auth**: Kein Account-System, keine User-Daten
 
 ## Design
