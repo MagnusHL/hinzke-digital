@@ -1,5 +1,5 @@
 ---
-title: "KI-Reporting"
+title: "Automatisiertes Reporting"
 description: "Automatische Reports aus allen Datenquellen -- Umsatz, Social Media, Website. KI fasst zusammen, du entscheidest."
 icon: "trending-up"
 techStack:

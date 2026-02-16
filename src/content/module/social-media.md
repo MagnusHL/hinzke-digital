@@ -1,5 +1,5 @@
 ---
-title: "KI-Social-Media-Autopilot"
+title: "Social Media Autopilot"
 description: "Social Media ohne Aufwand: KI generiert Content aus deinen Firmennews und postet automatisch auf LinkedIn, Instagram & Facebook."
 icon: "share-2"
 techStack:

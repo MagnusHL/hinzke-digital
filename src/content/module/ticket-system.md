@@ -1,6 +1,6 @@
 ---
 title: "Smartes Ticketsystem"
-description: "Helpdesk mit KI-Unterstützung: Tickets automatisch kategorisieren, priorisieren und dem richtigen Mitarbeiter zuweisen. Self-hosted, ohne Lizenzkosten."
+description: "Helpdesk mit KI-Unterstützung: Tickets automatisch kategorisieren, priorisieren und dem richtigen Mitarbeiter zuweisen. Auf Wunsch self-hosted, ohne Lizenzkosten."
 icon: "ticket"
 techStack:
   - "FreeScout (self-hosted, Open Source)"

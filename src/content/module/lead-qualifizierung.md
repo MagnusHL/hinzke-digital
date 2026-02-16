@@ -1,5 +1,5 @@
 ---
-title: "KI-Lead-Qualifizierung"
+title: "Intelligente Lead-Qualifizierung"
 description: "Website-Leads automatisch bewerten, ins CRM eintragen und personalisiertes Follow-up senden. Kein Interessent geht mehr verloren."
 icon: "target"
 techStack:
