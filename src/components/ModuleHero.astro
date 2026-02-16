@@ -1,0 +1,49 @@
+---
+import Breadcrumb from './Breadcrumb.astro';
+import ModuleIcon from './ModuleIcon.astro';
+import CTAButton from './CTAButton.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  techStack: string[];
+  breadcrumbItems: { label: string; href?: string }[];
+}
+
+const { title, description, icon, techStack, breadcrumbItems } = Astro.props;
+---
+
+<section class="bg-gray-50 py-16 md:py-20">
+  <div class="mx-auto max-w-6xl px-4">
+    <Breadcrumb items={breadcrumbItems} />
+
+    <div class="flex items-start gap-4 mb-4">
+      <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+        <ModuleIcon name={icon} class="h-7 w-7" />
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">{title}</h1>
+    </div>
+
+    <p class="mt-4 max-w-3xl text-lg text-gray-600 leading-relaxed">{description}</p>
+
+    {techStack.length > 0 && (
+      <div class="mt-6 flex flex-wrap gap-2">
+        {techStack.map((tech) => (
+          <span class="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            {tech}
+          </span>
+        ))}
+      </div>
+    )}
+
+    <div class="mt-8 flex flex-wrap gap-4">
+      <CTAButton href="/kontakt#beratung" variant="primary" size="lg">
+        Beratungsgespräch buchen
+      </CTAButton>
+      <CTAButton href="/kontakt" variant="secondary" size="lg">
+        Individuell anfragen
+      </CTAButton>
+    </div>
+  </div>
+</section>

@@ -33,56 +33,27 @@ faq:
     answer: "Für die tägliche Content-Erstellung und das Posten nicht mehr. Für strategische Planung, Community Management und bezahlte Kampagnen kann ein Social Media Manager aber weiterhin sinnvoll sein."
   - question: "Wie viel Content wird automatisch erstellt?"
     answer: "Das hängt von deinen Firmennews ab. Im Schnitt generiert der Autopilot 3-5 Beiträge pro Woche aus internen Updates, Blogartikeln oder Branchennews."
+highlights:
+  - icon: "globe"
+    title: "Multi-Plattform-Posting"
+    text: "Ein Trigger, drei Plattformen. LinkedIn, Instagram und Facebook werden gleichzeitig bespielt -- mit plattformgerechtem Ton und Format."
+  - icon: "clock"
+    title: "Zeitgesteuerter Versand"
+    text: "Beiträge werden automatisch über die Woche verteilt und zu den optimalen Posting-Zeiten jeder Plattform veröffentlicht."
+  - icon: "sparkles"
+    title: "KI-generierter Content"
+    text: "Aus Firmennews, Blogposts oder Branchenmeldungen erstellt die KI plattformgerechte Beiträge -- mit passender Tonalität und Hashtags."
+steps:
+  - title: "Trigger erkennen"
+    description: "Ein neuer Blogpost, eine Pressemitteilung oder ein Firmenevent -- der Workflow erkennt automatisch, dass es etwas zu posten gibt."
+  - title: "Content generieren"
+    description: "Die KI erstellt aus dem Trigger plattformgerechte Beiträge: professionell für LinkedIn, knackig für Instagram, locker für Facebook."
+  - title: "Zeitgesteuert veröffentlichen"
+    description: "Die Beiträge werden auf die optimalen Posting-Zeiten verteilt. Optional mit Freigabe-Schritt vor der Veröffentlichung."
+problem:
+  heading: "Social Media bleibt auf der Strecke"
+  text: "Ein mittelständisches Unternehmen postet im Schnitt 2-3 Mal pro Monat -- zu wenig für algorithmische Sichtbarkeit. LinkedIn empfiehlt 3-5 Beiträge pro Woche. Das liegt selten an fehlendem Willen, sondern am Tagesgeschäft. Einen eigenen Social Media Manager einstellen? Ab 3.000 EUR monatlich. Eine Agentur? Ähnliche Größenordnung plus Abstimmungsaufwand. Der Account wirkt verwaist, die Konkurrenz bekommt die Aufmerksamkeit."
+solution:
+  heading: "Content auf Autopilot"
+  text: "Der Social Media Autopilot überwacht verschiedene Quellen -- Blogposts, Pressemitteilungen, Branchennews -- und generiert daraus plattformgerechte Beiträge per KI. LinkedIn bekommt professionellen Ton, Instagram knackige Captions, Facebook einen lockeren Stil. Der Workflow verteilt die Posts zeitgesteuert über die Woche und postet zu optimalen Zeiten. Optional gibst du jeden Beitrag vorher frei oder lässt den Autopiloten komplett automatisch laufen."
 ---
-
-Dein Unternehmen hat Neuigkeiten, Projekte und Erfolge -- aber niemand postet sie. Der Social Media Autopilot generiert aus deinen Firmennews plattformgerechte Beiträge und veröffentlicht sie automatisch auf LinkedIn, Instagram und Facebook. Regelmäßige Sichtbarkeit ohne täglichen Aufwand.
-
-## Das Problem
-
-Ein mittelständisches Unternehmen postet im Schnitt 2-3 Mal pro Monat auf Social Media. Das ist zu wenig, um in den Algorithmen sichtbar zu bleiben -- LinkedIn empfiehlt mindestens 3-5 Beiträge pro Woche für relevante Reichweite. Das Ergebnis: Der Account wirkt verwaist, potenzielle Kunden scrollen vorbei, und die Konkurrenz, die regelmäßig postet, bekommt die Aufmerksamkeit.
-
-Das liegt selten an fehlendem Willen. Es liegt am Tagesgeschäft. Zwischen Kundenanfragen, Produktion und Verwaltung bleibt Social Media auf der Strecke. Und einen eigenen Social Media Manager einzustellen, rechnet sich für die meisten KMU schlicht nicht -- Kosten ab 3.000 EUR monatlich für eine Teilzeitkraft. Eine Agentur? Ähnliche Größenordnung, dazu noch Abstimmungsaufwand und Feedbackschleifen, die im Alltag kaum zu stemmen sind.
-
-## So funktioniert's
-
-Der Social Media Autopilot basiert auf einem N8N-Workflow, der verschiedene Quellen überwacht und daraus Content generiert. Das können interne Trigger sein -- ein neuer Blogpost, eine Pressemitteilung, ein neuer Mitarbeiter, ein abgeschlossenes Projekt -- oder externe Quellen wie Branchennews, die für dein Unternehmen relevant sind.
-
-Sobald ein Trigger feuert, erstellt die KI (OpenAI oder Claude) plattformgerechte Beiträge. Das bedeutet: Ein LinkedIn-Post bekommt einen professionellen Ton mit Absätzen und Hashtags, ein Instagram-Post eine knackige Caption mit passenden Emojis, ein Facebook-Update einen etwas lockereren Stil. Die KI kennt die Unterschiede und passt Format, Länge und Tonalität automatisch an.
-
-Der Workflow verteilt die Beiträge zeitgesteuert über die Woche. Nicht alles auf einmal am Montag um 9 Uhr, sondern verteilt auf die optimalen Posting-Zeiten jeder Plattform. Optional kannst du jeden Beitrag vor der Veröffentlichung in einer Vorschau freigeben -- oder den Autopiloten komplett automatisch laufen lassen.
-
-Bilder und Grafiken lassen sich ebenfalls einbinden. Entweder du lieferst eigenes Bildmaterial, oder der Workflow nutzt vorhandene Firmenbilder und passt sie auf die jeweiligen Plattformformate an. Für Instagram werden Bilder auf Quadrat oder 4:5 zugeschnitten, für LinkedIn auf Querformat optimiert.
-
-## Für wen?
-
-- **Handwerksbetriebe**: Projekte dokumentieren, Vorher-Nachher-Bilder automatisch posten, Kundenbewertungen teilen. Du machst gute Arbeit -- der Autopilot zeigt sie der Welt. Ein Dachdecker, der regelmäßig Projektbilder postet, bekommt mehr Anfragen als einer mit einem leeren Profil.
-- **Dienstleister und Agenturen**: Expertise demonstrieren durch regelmäßige Fachbeiträge. Die KI verwandelt dein Wissen in LinkedIn-Posts, die Vertrauen aufbauen und Anfragen generieren. Studien zeigen: Unternehmen mit wöchentlichen LinkedIn-Posts generieren 2x mehr Leads als inaktive Accounts.
-- **Handel und E-Commerce**: Neue Produkte, Aktionen und saisonale Angebote automatisch auf allen Kanälen kommunizieren. Kein Produkt-Launch mehr ohne Social Media Begleitung. Der Autopilot erstellt aus einer Produktbeschreibung plattformgerechte Posts für alle Kanäle gleichzeitig.
-
-## Kombiniert mit
-
-Der Social Media Autopilot entfaltet sein volles Potenzial in Kombination mit anderen Modulen. Das [Newsletter-System](/module/newsletter) nutzt die gleiche Content-Basis -- was auf Social Media funktioniert, wird zum Newsletter-Thema, und umgekehrt. So entsteht ein konsistenter Content-Kreislauf ohne doppelten Aufwand.
-
-Besonders spannend ist die Kombination mit dem [Bewertungs-Management](/module/bewertungen): Positive Google-Bewertungen automatisch als Social-Proof auf LinkedIn und Facebook teilen. Das schafft Vertrauen und zeigt potenziellen Kunden, was Bestandskunden über dich sagen.
-
-Und mit der [Lead-Qualifizierung](/module/lead-qualifizierung) schließt sich der Kreis: Social Media generiert Aufmerksamkeit, Interessenten klicken auf deine Website, und die Lead-Qualifizierung bewertet und priorisiert sie automatisch. Vom Post zur Anfrage zum Kunden -- ein durchgängiger Prozess.
-
-Du brauchst erst mal eine professionelle Website? Schau dir unsere [Webseiten-Pakete](/webseiten) an -- der Social Media Autopilot lässt sich nahtlos integrieren.
-
-## Was kostet der Social Media Autopilot?
-
-Die Einrichtung ist ein einmaliger Aufwand. Laufende Kosten fallen nur für den KI-Dienst an -- bei typischem Posting-Volumen zwischen 10 und 30 EUR pro Monat. Kein Vergleich zu einer Agentur oder einem Social Media Manager. Die Investition amortisiert sich in der Regel innerhalb des ersten Monats durch die eingesparte Zeit.
-
-## Kann ich Beiträge vor der Veröffentlichung prüfen?
-
-Ja, der Workflow lässt sich so konfigurieren, dass jeder Beitrag erst nach deiner Freigabe veröffentlicht wird. Du bekommst eine Benachrichtigung mit Vorschau und gibst per Klick frei -- oder lässt den Autopiloten für bestimmte Formate und Plattformen komplett automatisch laufen. Du entscheidest, wie viel Kontrolle du behalten willst. In der Praxis starten die meisten mit Freigabe und schalten nach ein paar Wochen auf Autopilot um, wenn das Vertrauen da ist.
-
-## Welche Plattformen werden unterstützt?
-
-Aktuell LinkedIn, Instagram und Facebook -- die drei relevantesten Plattformen für KMU im DACH-Raum. Weitere Plattformen wie TikTok, X oder Pinterest lassen sich bei Bedarf anbinden. Die N8N-Architektur ist modular, neue Kanäle sind ein überschaubarer Aufwand. Auch Google Business Posts sind möglich -- besonders für lokale Unternehmen ein unterschätzter Kanal.
-
-## Brauche ich trotzdem noch einen Social Media Manager?
-
-Für die tägliche Content-Erstellung und das Posten: Nein. Der Autopilot übernimmt genau das. Für strategische Planung, Community Management und bezahlte Kampagnen kann ein Social Media Manager aber weiterhin sinnvoll sein. Der Autopilot ersetzt die Fleißarbeit, nicht die Strategie. Viele unserer Kunden nutzen den Autopiloten als Basis und schalten bei Bedarf gezielte Kampagnen manuell dazu.
-
-Klingt interessant? [Lass uns in 20 Minuten besprechen](/kontakt), ob der Social Media Autopilot für dein Unternehmen Sinn macht.
