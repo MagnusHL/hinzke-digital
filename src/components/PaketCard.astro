@@ -1,0 +1,56 @@
+---
+interface Props {
+  name: string;
+  price: string;
+  features: string[];
+  highlighted?: boolean;
+  href: string;
+}
+
+const { name, price, features, highlighted = false, href } = Astro.props;
+---
+
+<div
+  class:list={[
+    'relative flex flex-col rounded-2xl border p-8',
+    highlighted
+      ? 'border-primary shadow-xl ring-1 ring-primary'
+      : 'border-gray-200',
+  ]}
+>
+  {highlighted && (
+    <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-semibold text-white">
+      Beliebt
+    </span>
+  )}
+
+  <h3 class="text-xl font-bold text-gray-900">{name}</h3>
+
+  <div class="mt-4 flex items-baseline">
+    <span class="text-4xl font-bold text-gray-900">{price}</span>
+    <span class="ml-1 text-sm text-gray-500">EUR</span>
+  </div>
+
+  <ul class="mt-8 flex-1 space-y-3">
+    {features.map((feature) => (
+      <li class="flex items-start gap-2 text-sm text-gray-600">
+        <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        {feature}
+      </li>
+    ))}
+  </ul>
+
+  <a
+    href={href}
+    class:list={[
+      'mt-8 block w-full rounded-lg py-3 text-center text-sm font-semibold transition-colors',
+      highlighted
+        ? 'bg-primary text-white hover:bg-blue-700'
+        : 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
+    ]}
+  >
+    Jetzt buchen
+  </a>
+</div>

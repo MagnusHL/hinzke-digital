@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import PaketCard from '../components/PaketCard.astro';
+
+const pakete = [
+  {
+    name: 'Starter',
+    price: 'ab 990',
+    highlighted: false,
+    href: '#starter',
+    features: [
+      'Bis zu 5 Seiten',
+      'Responsive Design',
+      'Kontaktformular',
+      'SEO-Grundlagen',
+      'SSL-Zertifikat',
+      '1 Korrekturschleife',
+    ],
+  },
+  {
+    name: 'Business',
+    price: 'ab 2.490',
+    highlighted: true,
+    href: '#business',
+    features: [
+      'Bis zu 10 Seiten',
+      'CMS für eigene Pflege',
+      'Blog-Funktion',
+      'Analytics-Integration',
+      'Newsletter-Anbindung',
+      'SEO-Optimierung',
+      '3 Korrekturschleifen',
+    ],
+  },
+  {
+    name: 'Premium',
+    price: 'ab 4.990',
+    highlighted: false,
+    href: '#premium',
+    features: [
+      'Unbegrenzte Seiten',
+      'E-Commerce-Integration',
+      'KI-Features (Chatbot, Suche)',
+      'Priority Support',
+      'Performance-Optimierung',
+      'Schulung für Ihr Team',
+      'Laufende Betreuung',
+    ],
+  },
+];
+---
+
+<Layout title="Webseiten-Pakete" description="Professionelle Webseiten für KMU. Drei Pakete: Starter, Business, Premium. Modern, schnell, SEO-optimiert.">
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Webseiten-Pakete"
+        subtitle="Professionelle Webseiten für jedes Budget. Modern gebaut, schnell geladen, SEO-optimiert."
+      />
+
+      <div class="mx-auto grid max-w-5xl gap-8 lg:grid-cols-3">
+        {pakete.map((paket) => (
+          <PaketCard
+            name={paket.name}
+            price={paket.price}
+            features={paket.features}
+            highlighted={paket.highlighted}
+            href={paket.href}
+          />
+        ))}
+      </div>
+
+      <div class="mx-auto mt-16 max-w-3xl">
+        <h3 class="mb-6 text-center text-2xl font-bold text-gray-900">Häufige Fragen</h3>
+        <div class="space-y-4">
+          {[
+            { q: 'Wie lange dauert die Umsetzung?', a: 'Starter: 1-2 Wochen. Business: 2-4 Wochen. Premium: 4-8 Wochen. Abhängig von Ihren Inhalten und Rückmeldungen.' },
+            { q: 'Was passiert nach der Fertigstellung?', a: 'Sie können die Seite selbst pflegen (Business/Premium) oder beauftragen uns mit laufender Betreuung. Hosting und SSL sind inklusive.' },
+            { q: 'Kann ich später upgraden?', a: 'Selbstverständlich. Wir bauen modular auf, sodass ein Upgrade jederzeit möglich ist, ohne von vorne anfangen zu müssen.' },
+            { q: 'Welche Technologien werden eingesetzt?', a: 'Wir nutzen Astro, Tailwind CSS und TypeScript. Schnell, modern, wartbar. Hosting auf Ihrer eigenen Infrastruktur oder bei uns.' },
+          ].map((faq) => (
+            <details class="group rounded-lg border border-gray-200 px-6 py-4">
+              <summary class="flex cursor-pointer items-center justify-between font-medium text-gray-900">
+                {faq.q}
+                <svg class="h-5 w-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-sm text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

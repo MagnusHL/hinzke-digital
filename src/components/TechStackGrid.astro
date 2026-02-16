@@ -1,0 +1,53 @@
+---
+const categories = [
+  {
+    name: 'KI & Automatisierung',
+    items: ['OpenAI', 'Azure AI', 'Claude / Anthropic', 'N8N', 'Cursor'],
+  },
+  {
+    name: 'Frameworks & Web',
+    items: ['Astro', 'Next.js', 'React', 'SvelteKit', 'Tailwind CSS', 'TypeScript'],
+  },
+  {
+    name: 'E-Commerce & CMS',
+    items: ['Shopware 6', 'Medusa.js', 'Strapi', 'Meilisearch'],
+  },
+  {
+    name: 'Datenbanken & Backend',
+    items: ['PostgreSQL', 'Redis', 'Supabase', 'SQL Server', 'Prisma'],
+  },
+  {
+    name: 'DevOps & Infrastruktur',
+    items: ['Docker', 'Proxmox', 'Dokploy', 'Cloudflare', 'Playwright'],
+  },
+  {
+    name: 'Payments & Business',
+    items: ['Stripe', 'PayPal', 'LexOffice', 'Datev', 'Tidely', 'HubSpot'],
+  },
+  {
+    name: 'Produktivität & Tools',
+    items: ['FreeScout', 'Listmonk', 'Obsidian', 'Notion', 'Coda.io', 'Paperless', 'Nextcloud', 'Home Assistant', 'Matomo'],
+  },
+  {
+    name: 'Sprachen',
+    items: ['TypeScript / JavaScript', 'Python', 'Go', 'PHP'],
+  },
+];
+---
+
+<div class="space-y-8">
+  {categories.map((category) => (
+    <div>
+      <h3 class="mb-3 text-sm font-semibold uppercase tracking-wider text-gray-500">
+        {category.name}
+      </h3>
+      <div class="flex flex-wrap gap-2">
+        {category.items.map((item) => (
+          <span class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm font-medium text-gray-700 transition-all hover:border-primary/30 hover:bg-primary/5 hover:text-primary">
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>

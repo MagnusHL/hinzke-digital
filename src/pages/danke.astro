@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<Layout title="Vielen Dank">
+  <section class="flex min-h-[60vh] items-center py-20">
+    <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+      <div class="mb-6 text-5xl">✓</div>
+      <h1 class="text-3xl font-bold text-gray-900">Vielen Dank für Ihre Buchung!</h1>
+      <p class="mt-4 text-lg text-gray-600">
+        Wir haben Ihre Bestellung erhalten und senden Ihnen in Kürze eine Bestätigungsmail.
+        Wir melden uns zeitnah, um die nächsten Schritte zu besprechen.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <CTAButton href="/">Zur Startseite</CTAButton>
+        <CTAButton href="/kontakt" variant="secondary">Kontakt aufnehmen</CTAButton>
+      </div>
+    </div>
+  </section>
+</Layout>

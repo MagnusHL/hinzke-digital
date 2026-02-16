@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ModuleCard from '../../components/ModuleCard.astro';
+import { getCollection } from 'astro:content';
+
+const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="Digitale Module" description="14 digitale Module für die Automatisierung und Digitalisierung Ihres Unternehmens. Von KI-Chatbot bis Newsletter-System.">
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Digitale Module"
+        subtitle="Fertige Bausteine für die Digitalisierung Ihres Unternehmens. Jedes Modul wird individuell auf Ihre Anforderungen angepasst."
+      />
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {modules.map((mod) => (
+          <ModuleCard
+            title={mod.data.title}
+            description={mod.data.description}
+            slug={mod.id}
+            icon={mod.data.icon}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
