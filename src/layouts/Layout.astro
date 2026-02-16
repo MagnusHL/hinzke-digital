@@ -82,6 +82,20 @@ const allStructuredData = structuredData
     {allStructuredData.map((item) => (
       <script type="application/ld+json" set:html={JSON.stringify(item)} />
     ))}
+
+    <!-- Matomo -->
+    <script is:inline>
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://analytics.hinzke.de/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <Header />

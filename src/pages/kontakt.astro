@@ -1,6 +1,9 @@
 ---
+export const prerender = false;
+
 import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import CalComWidget from '../components/CalComWidget.astro';
 import { getCollection } from 'astro:content';
 
 const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.data.order);
@@ -14,7 +17,7 @@ const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.
         subtitle="Schreib uns oder buch direkt ein Beratungsgespräch."
       />
 
-      <div class="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2">
+      <div class="mx-auto grid max-w-5xl gap-12 md:grid-cols-2">
         <!-- Kontaktformular -->
         <div>
           <h3 class="mb-6 text-xl font-semibold text-gray-900">Nachricht senden</h3>
@@ -79,16 +82,8 @@ const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.
           </div>
         </div>
 
-        <!-- Cal.com Platzhalter -->
-        <div>
-          <h3 class="mb-6 text-xl font-semibold text-gray-900">Beratungsgespräch buchen</h3>
-          <div class="flex items-center justify-center rounded-xl border-2 border-dashed border-gray-300 p-12 text-center">
-            <div>
-              <p class="text-gray-500">Cal.com Buchungswidget</p>
-              <p class="mt-2 text-sm text-gray-400">Wird nach Setup eingebunden</p>
-            </div>
-          </div>
-        </div>
+        <!-- Cal.com Widget -->
+        <CalComWidget />
       </div>
     </div>
   </section>
