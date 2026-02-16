@@ -1,7 +1,7 @@
 ---
-title: "Online Support Chat"
-description: "KI-Chatbot für deine Website: Beantwortet Kundenfragen 24/7, trainiert auf deine Firmendaten. Jetzt beraten lassen."
-icon: "💬"
+title: "KI-Support-Chat"
+description: "KI-Chatbot für deine Website: Beantwortet Kundenfragen 24/7, trainiert auf deine Firmendaten. Sofortige Antworten statt Warteschleife."
+icon: "message-circle"
 techStack:
   - "N8N"
   - "OpenAI/Claude"

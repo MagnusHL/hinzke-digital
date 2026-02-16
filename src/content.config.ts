@@ -6,7 +6,11 @@ const module = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    icon: z.string(),
+    icon: z.enum([
+      'message-circle', 'ticket', 'calendar', 'receipt', 'bar-chart-3',
+      'mail', 'star', 'share-2', 'file-scan', 'clipboard-list',
+      'target', 'trending-up', 'send', 'handshake',
+    ]),
     techStack: z.array(z.string()),
     benefits: z.array(z.string()),
     useCases: z.array(z.string()),

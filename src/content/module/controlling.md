@@ -1,7 +1,7 @@
 ---
-title: "Controlling"
-description: "Cashflow-Analyse und Liquiditätsplanung in Echtzeit mit Tidely -- alle Konten, alle Prognosen auf einen Blick. Jetzt beraten lassen."
-icon: "📊"
+title: "KI-Controlling"
+description: "Cashflow-Analyse mit KI-Prognosen: Liquiditätsplanung, Anomalie-Erkennung und Szenario-Simulationen auf einen Blick."
+icon: "bar-chart-3"
 techStack:
   - "Tidely (ab 45 EUR/Monat)"
   - "5000+ Bankanbindungen"

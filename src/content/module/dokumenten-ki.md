@@ -1,7 +1,7 @@
 ---
 title: "Dokumenten-KI"
 description: "Rechnungen & Lieferscheine automatisch erkennen und Daten extrahieren. KI-gestützte Dokumentenverarbeitung für KMU."
-icon: "📄"
+icon: "file-scan"
 techStack:
   - "N8N"
   - "Vision AI (GPT-4o / Claude)"

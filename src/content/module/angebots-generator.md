@@ -1,7 +1,7 @@
 ---
-title: "Angebots-Generator"
-description: "Aus Kundenanfragen automatisch Angebote erstellen -- mit KI, Preislisten und Nachverfolgung. Schneller als jeder Vertrieb."
-icon: "📋"
+title: "KI-Angebotsgenerator"
+description: "Aus Kundenanfragen automatisch Angebote erstellen -- KI nutzt deine Preislisten und Vorlagen. Schneller als jeder Vertrieb."
+icon: "clipboard-list"
 techStack:
   - "N8N"
   - "OpenAI / Claude"

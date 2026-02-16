@@ -1,7 +1,7 @@
 ---
-title: "Reporting Dashboard"
+title: "KI-Reporting"
 description: "Automatische Reports aus allen Datenquellen -- Umsatz, Social Media, Website. KI fasst zusammen, du entscheidest."
-icon: "📈"
+icon: "trending-up"
 techStack:
   - "N8N"
   - "Daten-APIs (Shopware, Matomo, Social Media)"

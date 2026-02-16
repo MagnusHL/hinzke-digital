@@ -1,7 +1,7 @@
 ---
-title: "Buchungsmodul"
-description: "Online-Terminbuchung für deine Website -- Kunden buchen selbst, Kalender synchronisiert automatisch. Jetzt beraten lassen."
-icon: "📅"
+title: "Smarte Terminbuchung"
+description: "Online-Terminbuchung mit intelligenter Planung -- Kunden buchen selbst, KI optimiert Auslastung und reduziert No-Shows."
+icon: "calendar"
 techStack:
   - "Cal.com (White-Label oder Custom)"
 benefits:
