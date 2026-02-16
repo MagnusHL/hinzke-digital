@@ -1,23 +1,77 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CTAButton from '../../components/CTAButton.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import RelatedModules from '../../components/RelatedModules.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const modules = await getCollection('module');
   return modules.map((mod) => ({
     params: { slug: mod.id },
-    props: { mod },
+    props: { mod, allModules: modules },
   }));
 }
 
-const { mod } = Astro.props;
+const { mod, allModules } = Astro.props;
 const { Content } = await render(mod);
+
+// Related Modules auflösen
+const relatedModules = mod.data.relatedModules
+  ? allModules.filter((m: any) => mod.data.relatedModules!.includes(m.id))
+  : [];
+
+// FAQ Schema generieren
+const faqSchema = mod.data.faq && mod.data.faq.length > 0
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": mod.data.faq.map((item: { question: string; answer: string }) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer,
+        },
+      })),
+    }
+  : null;
+
+// Service Schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": mod.data.title,
+  "description": mod.data.description,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Hinzke Digital",
+    "url": "https://hinzke.online",
+  },
+};
+
+const structuredData = faqSchema
+  ? [serviceSchema, faqSchema]
+  : serviceSchema;
+
+const breadcrumbItems = [
+  { label: 'Startseite', href: '/' },
+  { label: 'Module', href: '/module' },
+  { label: mod.data.title },
+];
 ---
 
-<Layout title={mod.data.title} description={mod.data.description}>
+<Layout
+  title={mod.data.title}
+  description={mod.data.description}
+  canonicalUrl={`https://hinzke.online/module/${mod.id}`}
+  structuredData={structuredData}
+>
   <article class="py-20">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+
+      <Breadcrumb items={breadcrumbItems} />
+
       <div class="mb-8">
         <span class="text-5xl">{mod.data.icon}</span>
       </div>
@@ -41,7 +95,7 @@ const { Content } = await render(mod);
 
       <!-- Benefits -->
       <div class="mt-12 rounded-xl bg-gray-50 p-8">
-        <h2 class="mb-6 text-2xl font-bold text-gray-900">Ihre Vorteile</h2>
+        <h2 class="mb-6 text-2xl font-bold text-gray-900">Deine Vorteile</h2>
         <ul class="grid gap-3 sm:grid-cols-2">
           {mod.data.benefits.map((benefit: string) => (
             <li class="flex items-start gap-2">
@@ -69,11 +123,30 @@ const { Content } = await render(mod);
         </ul>
       </div>
 
+      <!-- FAQ Section -->
+      {mod.data.faq && mod.data.faq.length > 0 && (
+        <div class="mt-12 rounded-xl border border-gray-200 p-8">
+          <h2 class="mb-6 text-2xl font-bold text-gray-900">Häufige Fragen</h2>
+          <dl class="space-y-6">
+            {mod.data.faq.map((item: { question: string; answer: string }) => (
+              <div>
+                <dt class="text-base font-semibold text-gray-900">{item.question}</dt>
+                <dd class="mt-2 text-sm leading-relaxed text-gray-600">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      )}
+
       <!-- CTAs -->
       <div class="mt-12 flex flex-wrap gap-4">
         <CTAButton href="/kontakt" size="lg">Beratungsgespräch buchen</CTAButton>
         <CTAButton href="/kontakt" variant="secondary" size="lg">Individuell anfragen</CTAButton>
       </div>
+
+      <!-- Related Modules -->
+      <RelatedModules modules={relatedModules} />
+
     </div>
   </article>
 </Layout>
