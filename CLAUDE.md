@@ -199,6 +199,42 @@ Bestehende Hinzke-Druckkunden (< 2000 Adressen aus CSV) informieren: "Magnus mac
 9. l3dynamics.de → 301 Redirect
 10. E-Mail-Kampagne (CSV validieren → Listmonk → senden)
 
+## Modul-Bildgenerierung
+
+Jedes Modul hat zwei Bilder (Problem + Solution) unter `public/images/module/{slug}-problem.png` und `{slug}-solution.png`. Die Bilder werden via Gemini 3 Pro generiert.
+
+### Script
+
+`scripts/generate-module-images.py` -- Prompts und Generierung für alle 14 Module.
+
+```bash
+# Einzelnes Modul generieren
+.venv/bin/python scripts/generate-module-images.py --module support-chat --force
+
+# Alle Module generieren
+.venv/bin/python scripts/generate-module-images.py --force
+
+# Nur Prompts anzeigen (kein API-Call)
+.venv/bin/python scripts/generate-module-images.py --dry-run
+```
+
+Braucht `GEMINI_API_KEY` als Umgebungsvariable. Rate-Limiting: 5s Pause zwischen Calls.
+
+### Bildstil
+
+Dashboard-Mockup-Stil: Realistische UI-Screenshots, floating Browser Windows, cleaner Hintergrund, SaaS-Design. Kein Cartoon, keine Personen.
+
+- **Problem-Bilder**: Chaotische, überladene Interfaces (rote Warnings, überfüllte Inboxen, Fehler)
+- **Solution-Bilder**: Cleane, moderne Dashboards (grüne Checkmarks, aufsteigende Trends, organisierte Layouts)
+
+Prompts im Script sind englisch, STYLE_PREFIX wird automatisch vorangestellt.
+
+### Einbindung
+
+Die Bilder werden in `src/pages/module/[...slug].astro` über die `ContentSection`-Komponente eingebunden:
+- Sektion 4: Problem-Bild (`/images/module/{slug}-problem.png`)
+- Sektion 6: Solution-Bild (`/images/module/{slug}-solution.png`)
+
 ## Trennbarkeit / Zukunftssicherheit
 
 - Eigene Domain → jederzeit auf andere GmbH übertragbar
