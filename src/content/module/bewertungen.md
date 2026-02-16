@@ -1,5 +1,5 @@
 ---
-title: "KI-Bewertungsmanagement"
+title: "Smartes Bewertungsmanagement"
 description: "Google Reviews automatisch beantworten, Sentiment-Analyse, Alerts bei negativen Bewertungen. Dein Ruf, aktiv gemanagt mit KI."
 icon: "star"
 techStack:

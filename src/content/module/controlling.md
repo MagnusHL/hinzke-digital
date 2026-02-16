@@ -1,5 +1,5 @@
 ---
-title: "KI-Controlling"
+title: "Intelligentes Controlling"
 description: "Cashflow-Analyse mit KI-Prognosen: Liquiditätsplanung, Anomalie-Erkennung und Szenario-Simulationen auf einen Blick."
 icon: "bar-chart-3"
 techStack:
