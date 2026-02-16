@@ -2,10 +2,9 @@ export const prerender = false;
 
 import type { APIRoute } from 'astro';
 import Stripe from 'stripe';
-import { Resend } from 'resend';
+import { sendMail } from '../../lib/mailer';
 
 const stripe = new Stripe(import.meta.env.STRIPE_SECRET_KEY);
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const POST: APIRoute = async ({ request }) => {
   const signature = request.headers.get('stripe-signature');
@@ -27,8 +26,7 @@ export const POST: APIRoute = async ({ request }) => {
       const customerEmail = session.customer_details?.email;
 
       if (customerEmail) {
-        await resend.emails.send({
-          from: 'Hinzke Digital <noreply@hinzke.de>',
+        await sendMail({
           to: customerEmail,
           subject: 'Ihre Buchung bei Hinzke Digital - Bestätigung',
           html: `
@@ -38,8 +36,7 @@ export const POST: APIRoute = async ({ request }) => {
           `,
         });
 
-        await resend.emails.send({
-          from: 'Hinzke Digital <noreply@hinzke.de>',
+        await sendMail({
           to: import.meta.env.CONTACT_EMAIL,
           subject: `Neue Buchung: ${customerEmail}`,
           html: `

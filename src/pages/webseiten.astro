@@ -60,7 +60,7 @@ const pakete = [
         subtitle="Professionelle Webseiten für jedes Budget. Modern gebaut, schnell geladen, SEO-optimiert."
       />
 
-      <div class="mx-auto grid max-w-5xl gap-8 lg:grid-cols-3">
+      <div class="mx-auto grid max-w-5xl gap-6 lg:gap-8 lg:grid-cols-3">
         {pakete.map((paket) => (
           <PaketCard
             name={paket.name}
@@ -75,45 +75,45 @@ const pakete = [
       <!-- Feature-Vergleichstabelle -->
       <div class="mx-auto mt-16 max-w-5xl overflow-hidden rounded-xl border border-gray-200">
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-sm">
+          <table class="w-full text-left text-xs sm:text-sm">
             <thead>
               <tr class="sticky top-0 bg-gray-50">
-                <th class="px-6 py-4 font-semibold text-gray-900">Feature</th>
-                <th class="px-6 py-4 text-center font-semibold text-gray-900">Starter</th>
-                <th class="px-6 py-4 text-center font-semibold text-primary">Business</th>
-                <th class="px-6 py-4 text-center font-semibold text-gray-900">Premium</th>
+                <th class="px-3 py-4 font-semibold text-gray-900 sm:px-6">Feature</th>
+                <th class="px-3 py-4 text-center font-semibold text-gray-900 sm:px-6">Starter</th>
+                <th class="px-3 py-4 text-center font-semibold text-primary sm:px-6">Business</th>
+                <th class="px-3 py-4 text-center font-semibold text-gray-900 sm:px-6">Premium</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100">
               <tr>
-                <td class="px-6 py-3 text-gray-700">Seiten</td>
-                <td class="px-6 py-3 text-center text-gray-600">Bis zu 5</td>
-                <td class="px-6 py-3 text-center text-gray-600">Bis zu 10</td>
-                <td class="px-6 py-3 text-center text-gray-600">Unbegrenzt</td>
+                <td class="px-3 py-3 text-gray-700 sm:px-6">Seiten</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Bis zu 5</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Bis zu 10</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Unbegrenzt</td>
               </tr>
               <tr class="bg-gray-50/50">
-                <td class="px-6 py-3 text-gray-700">Design</td>
-                <td class="px-6 py-3 text-center text-gray-600">Responsive</td>
-                <td class="px-6 py-3 text-center text-gray-600">Responsive + CMS</td>
-                <td class="px-6 py-3 text-center text-gray-600">Responsive + CMS + Custom</td>
+                <td class="px-3 py-3 text-gray-700 sm:px-6">Design</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Responsive</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Responsive + CMS</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Responsive + CMS + Custom</td>
               </tr>
               <tr>
-                <td class="px-6 py-3 text-gray-700">SEO</td>
-                <td class="px-6 py-3 text-center text-gray-600">Grundlagen</td>
-                <td class="px-6 py-3 text-center text-gray-600">Optimierung</td>
-                <td class="px-6 py-3 text-center text-gray-600">Full SEO + Performance</td>
+                <td class="px-3 py-3 text-gray-700 sm:px-6">SEO</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Grundlagen</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Optimierung</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Full SEO + Performance</td>
               </tr>
               <tr class="bg-gray-50/50">
-                <td class="px-6 py-3 text-gray-700">Support</td>
-                <td class="px-6 py-3 text-center text-gray-600">1 Korrektur</td>
-                <td class="px-6 py-3 text-center text-gray-600">3 Korrekturen</td>
-                <td class="px-6 py-3 text-center text-gray-600">Priority + Schulung</td>
+                <td class="px-3 py-3 text-gray-700 sm:px-6">Support</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">1 Korrektur</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">3 Korrekturen</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Priority + Schulung</td>
               </tr>
               <tr>
-                <td class="px-6 py-3 text-gray-700">Extras</td>
-                <td class="px-6 py-3 text-center text-gray-600">Kontaktformular, SSL</td>
-                <td class="px-6 py-3 text-center text-gray-600">Blog, Analytics, Newsletter</td>
-                <td class="px-6 py-3 text-center text-gray-600">E-Commerce, KI-Features, Betreuung</td>
+                <td class="px-3 py-3 text-gray-700 sm:px-6">Extras</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Kontaktformular, SSL</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Blog, Analytics, Newsletter</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">E-Commerce, KI-Features, Betreuung</td>
               </tr>
             </tbody>
           </table>
