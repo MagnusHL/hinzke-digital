@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import CTAButton from '../../components/CTAButton.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import RelatedModules from '../../components/RelatedModules.astro';
+import ModuleIcon from '../../components/ModuleIcon.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -73,7 +74,7 @@ const breadcrumbItems = [
       <Breadcrumb items={breadcrumbItems} />
 
       <div class="mb-8">
-        <span class="text-5xl">{mod.data.icon}</span>
+        <ModuleIcon name={mod.data.icon} class="h-12 w-12 text-primary" />
       </div>
 
       <h1 class="text-4xl font-bold text-gray-900">{mod.data.title}</h1>

@@ -1,4 +1,6 @@
 ---
+import ModuleIcon from './ModuleIcon.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -13,7 +15,7 @@ const { title, description, slug, icon } = Astro.props;
   href={`/module/${slug}`}
   class="group block rounded-xl border border-gray-200 p-6 transition-all hover:border-primary/30 hover:shadow-lg"
 >
-  <div class="mb-3 text-3xl">{icon}</div>
+  <div class="mb-3"><ModuleIcon name={icon} class="h-8 w-8 text-primary" /></div>
   <h3 class="mb-2 text-lg font-semibold text-gray-900 group-hover:text-primary">
     {title}
   </h3>
