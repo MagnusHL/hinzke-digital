@@ -9,17 +9,17 @@ const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.
 const featuredModules = modules.slice(0, 4);
 ---
 
-<Layout title="Digitale Lösungen für Ihr Unternehmen">
+<Layout title="Weniger Handarbeit, mehr Ergebnis -- Hinzke Digital">
   <!-- Hero -->
   <section class="bg-gradient-to-br from-gray-50 to-white py-20 md:py-32">
     <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
       <h1 class="text-4xl font-bold tracking-tight text-gray-900 md:text-6xl">
-        Digitale Lösungen<br />
-        <span class="text-primary">für Ihr Unternehmen</span>
+        Weniger Handarbeit,<br />
+        <span class="text-primary">mehr Ergebnis</span>
       </h1>
       <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
-        Von der professionellen Website bis zur KI-gestützten Automatisierung. 
-        Wir digitalisieren Ihre Geschäftsprozesse -- pragmatisch, sicher und auf Ihre Branche zugeschnitten.
+        KI-Module, Automatisierung und professionelle Webseiten -- speziell für den Mittelstand.
+        Pragmatisch umgesetzt, self-hosted, DSGVO-konform.
       </p>
       <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
         <CTAButton href="/webseiten" size="lg">Webseiten-Pakete</CTAButton>
@@ -36,18 +36,46 @@ const featuredModules = modules.slice(0, 4);
         subtitle="Praxiserfahrung trifft moderne Technologie"
       />
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-        {[
-          { icon: '🤖', title: 'KI-gestützt', desc: 'Modernste KI-Technologie für intelligente Automatisierung und smarte Workflows.' },
-          { icon: '🏠', title: 'Self-hosted', desc: 'Ihre Daten auf Ihrer Infrastruktur. Volle Kontrolle, DSGVO-konform, kein Vendor-Lock-in.' },
-          { icon: '🎯', title: 'Individuell', desc: 'Keine Standardlösung von der Stange. Jedes Modul wird auf Ihr Unternehmen angepasst.' },
-          { icon: '🏭', title: '40+ Jahre Erfahrung', desc: 'Aus der Praxis für die Praxis. Digitalisierung mit Bodenhaftung statt Buzzword-Bingo.' },
-        ].map((usp) => (
-          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-            <div class="mb-3 text-3xl">{usp.icon}</div>
-            <h3 class="mb-2 text-lg font-semibold text-gray-900">{usp.title}</h3>
-            <p class="text-sm leading-relaxed text-gray-600">{usp.desc}</p>
+        <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div class="mb-3">
+            <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
           </div>
-        ))}
+          <h3 class="mb-2 text-lg font-semibold text-gray-900">KI-gestützt</h3>
+          <p class="text-sm leading-relaxed text-gray-600">Modernste KI-Technologie für intelligente Automatisierung und smarte Workflows. <a href="/module" class="font-medium text-primary hover:underline">Entdecke unsere Module</a>.</p>
+        </div>
+        <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div class="mb-3">
+            <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold text-gray-900">Self-hosted</h3>
+          <p class="text-sm leading-relaxed text-gray-600">Deine Daten auf deiner Infrastruktur. Volle Kontrolle, DSGVO-konform, kein Vendor-Lock-in. <a href="/ueber-mich#tech-stack" class="font-medium text-primary hover:underline">Mehr zum Tech-Stack</a>.</p>
+        </div>
+        <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div class="mb-3">
+            <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold text-gray-900">Individuell</h3>
+          <p class="text-sm leading-relaxed text-gray-600">Keine Standardlösung von der Stange. Jedes Modul wird auf dein Unternehmen angepasst. <a href="/kontakt" class="font-medium text-primary hover:underline">Lass uns reden</a>.</p>
+        </div>
+        <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div class="mb-3">
+            <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+          </div>
+          <h3 class="mb-2 text-lg font-semibold text-gray-900">40+ Jahre Erfahrung</h3>
+          <p class="text-sm leading-relaxed text-gray-600">Aus der Praxis für die Praxis. Digitalisierung mit Bodenhaftung statt Buzzword-Bingo. <a href="/ueber-mich" class="font-medium text-primary hover:underline">Über Magnus</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="border-y border-gray-100 py-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="mb-8 text-center text-sm font-medium uppercase tracking-wider text-gray-500">Vertrauen von Unternehmen aus Lübeck und Umgebung</p>
+      <div class="flex flex-wrap items-center justify-center gap-12 opacity-60 grayscale">
+        <span class="text-lg font-semibold text-gray-400">VfB Lübeck</span>
+        <span class="text-lg font-semibold text-gray-400">VfL Lübeck-Schwartau</span>
+        <span class="text-lg font-semibold text-gray-400">THW Kiel</span>
       </div>
     </div>
   </section>
@@ -61,8 +89,8 @@ const featuredModules = modules.slice(0, 4);
       />
       <div class="text-center">
         <p class="mx-auto mb-8 max-w-2xl text-gray-600">
-          Responsive, schnell, SEO-optimiert. Unsere Webseiten werden mit modernen Frameworks gebaut 
-          und auf Ihrer eigenen Infrastruktur gehostet.
+          Responsive, schnell, SEO-optimiert. Deine Webseite wird mit modernen Frameworks gebaut
+          und auf deiner eigenen Infrastruktur gehostet.
         </p>
         <CTAButton href="/webseiten">Pakete ansehen</CTAButton>
       </div>
@@ -74,9 +102,9 @@ const featuredModules = modules.slice(0, 4);
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <SectionHeading
         title="Digitale Module"
-        subtitle="Fertige Bausteine für die Digitalisierung Ihres Unternehmens"
+        subtitle="Fertige Bausteine für die Digitalisierung deines Unternehmens"
       />
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {featuredModules.map((mod) => (
           <ModuleCard
             title={mod.data.title}
@@ -92,13 +120,55 @@ const featuredModules = modules.slice(0, 4);
     </div>
   </section>
 
+  <!-- Beliebte Kombinationen -->
+  <section class="bg-gray-50 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Beliebte Kombinationen"
+        subtitle="Module, die zusammen besonders gut funktionieren"
+      />
+      <div class="grid gap-6 md:gap-8 md:grid-cols-3">
+        <div class="rounded-xl border border-gray-200 bg-white p-8">
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Kundenservice-Paket</h3>
+          <p class="mb-6 text-sm text-gray-600">Schneller antworten, besser betreuen, Bewertungen im Griff -- dein Rundum-Paket für zufriedene Kunden.</p>
+          <ul class="mb-6 space-y-2">
+            <li><a href="/module/support-chat" class="text-sm font-medium text-primary hover:underline">Support-Chat</a></li>
+            <li><a href="/module/ticket-system" class="text-sm font-medium text-primary hover:underline">Ticket-System</a></li>
+            <li><a href="/module/bewertungen" class="text-sm font-medium text-primary hover:underline">Bewertungs-Management</a></li>
+          </ul>
+          <CTAButton href="/kontakt" variant="secondary" size="sm">Mehr erfahren</CTAButton>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-8">
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Büro-Autopilot</h3>
+          <p class="mb-6 text-sm text-gray-600">Buchhaltung, E-Mails und Dokumente automatisiert verarbeiten -- weniger Verwaltung, mehr Zeit fürs Kerngeschäft.</p>
+          <ul class="mb-6 space-y-2">
+            <li><a href="/module/buchhaltung" class="text-sm font-medium text-primary hover:underline">Buchhaltung</a></li>
+            <li><a href="/module/email-assistent" class="text-sm font-medium text-primary hover:underline">KI E-Mail Assistent</a></li>
+            <li><a href="/module/dokumenten-ki" class="text-sm font-medium text-primary hover:underline">Dokumenten-KI</a></li>
+          </ul>
+          <CTAButton href="/kontakt" variant="secondary" size="sm">Mehr erfahren</CTAButton>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-white p-8">
+          <h3 class="mb-3 text-xl font-bold text-gray-900">Marketing-Boost</h3>
+          <p class="mb-6 text-sm text-gray-600">Content erstellen, Leads qualifizieren und per Newsletter nachfassen -- Marketing auf Autopilot.</p>
+          <ul class="mb-6 space-y-2">
+            <li><a href="/module/social-media" class="text-sm font-medium text-primary hover:underline">Social Media Autopilot</a></li>
+            <li><a href="/module/newsletter" class="text-sm font-medium text-primary hover:underline">Newsletter-System</a></li>
+            <li><a href="/module/lead-qualifizierung" class="text-sm font-medium text-primary hover:underline">Lead-Qualifizierung</a></li>
+          </ul>
+          <CTAButton href="/kontakt" variant="secondary" size="sm">Mehr erfahren</CTAButton>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="bg-primary py-20 text-white">
     <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold md:text-4xl">Bereit für den nächsten Schritt?</h2>
+      <h2 class="text-3xl font-bold md:text-4xl">Bereit für deinen nächsten Schritt?</h2>
       <p class="mx-auto mt-4 max-w-xl text-lg text-blue-100">
-        Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, welche digitalen Lösungen 
-        Ihr Unternehmen voranbringen.
+        Lass uns in einem unverbindlichen Gespräch herausfinden, welche digitalen Lösungen
+        dein Unternehmen voranbringen.
       </p>
       <div class="mt-8">
         <a

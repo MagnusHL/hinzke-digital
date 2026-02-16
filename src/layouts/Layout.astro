@@ -6,9 +6,41 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  structuredData?: object | object[];
 }
 
-const { title, description = 'Digitale Produkte & Beratung von Magnus Hinzke. Webseiten, KI-Module und Automatisierung für den Mittelstand.' } = Astro.props;
+const {
+  title,
+  description = 'Digitale Produkte & Beratung von Magnus Hinzke. Webseiten, KI-Module und Automatisierung für den Mittelstand.',
+  ogImage = '/og-default.png',
+  canonicalUrl,
+  structuredData,
+} = Astro.props;
+
+const resolvedCanonical = canonicalUrl || Astro.url.href;
+const resolvedOgImage = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site).href;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Hinzke Digital",
+  "description": "Digitale Produkte & Beratung -- Webseiten, KI-Module und Automatisierung für den Mittelstand.",
+  "url": "https://hinzke.online",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lübeck",
+    "addressCountry": "DE"
+  },
+  "knowsAbout": ["KI-Automatisierung", "Webentwicklung", "Digitalisierung", "Self-Hosting"]
+};
+
+const allStructuredData = structuredData
+  ? Array.isArray(structuredData)
+    ? [localBusinessSchema, ...structuredData]
+    : [localBusinessSchema, structuredData]
+  : [localBusinessSchema];
 ---
 
 <!doctype html>
@@ -18,13 +50,52 @@ const { title, description = 'Digitale Produkte & Beratung von Magnus Hinzke. We
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+
     <title>{title} | Hinzke Digital</title>
+
+    <link rel="canonical" href={resolvedCanonical} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Lokale Fonts -->
+    <link rel="preload" href="/fonts/inter-latin-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${title} | Hinzke Digital`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={resolvedCanonical} />
+    <meta property="og:site_name" content="Hinzke Digital" />
+    <meta property="og:image" content={resolvedOgImage} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Hinzke Digital`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedOgImage} />
+
+    <!-- Structured Data -->
+    {allStructuredData.map((item) => (
+      <script type="application/ld+json" set:html={JSON.stringify(item)} />
+    ))}
+
+    <!-- Matomo -->
+    <script is:inline>
+      var _paq = window._paq = window._paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://analytics.hinzke.de/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <Header />

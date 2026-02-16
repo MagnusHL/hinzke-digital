@@ -12,11 +12,16 @@
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/node": "^9.5.3",
+    "@astrojs/sitemap": "^3.7.0",
     "@astrojs/tailwind": "^6.0.2",
+    "@fontsource/inter": "^5.2.8",
     "astro": "^5.17.2",
-    "resend": "^6.9.2",
+    "nodemailer": "^8.0.1",
     "stripe": "^20.3.1",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^7.0.10"
   }
 }

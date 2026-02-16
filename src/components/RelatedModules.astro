@@ -1,0 +1,31 @@
+---
+import ModuleCard from './ModuleCard.astro';
+
+interface Props {
+  modules: Array<{
+    id: string;
+    data: {
+      title: string;
+      description: string;
+      icon: string;
+    };
+  }>;
+}
+
+const { modules } = Astro.props;
+---
+{modules.length > 0 && (
+  <section class="mt-16 border-t border-gray-200 pt-12">
+    <h2 class="mb-8 text-2xl font-bold text-gray-900">Diese Module passen dazu</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {modules.map((mod) => (
+        <ModuleCard
+          title={mod.data.title}
+          description={mod.data.description}
+          slug={mod.id}
+          icon={mod.data.icon}
+        />
+      ))}
+    </div>
+  </section>
+)}
