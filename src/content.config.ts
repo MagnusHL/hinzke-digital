@@ -11,6 +11,8 @@ const module = defineCollection({
     benefits: z.array(z.string()),
     useCases: z.array(z.string()),
     order: z.number(),
+    relatedModules: z.array(z.string()).optional(),
+    faq: z.array(z.object({ question: z.string(), answer: z.string() })).optional(),
   }),
 });
 

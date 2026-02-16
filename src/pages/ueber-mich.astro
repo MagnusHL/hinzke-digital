@@ -5,40 +5,66 @@ import TechStackGrid from '../components/TechStackGrid.astro';
 import CTAButton from '../components/CTAButton.astro';
 ---
 
-<Layout title="Über mich" description="Magnus Hinzke -- Unternehmer aus Lübeck. 40+ Jahre Druckbranche, jetzt auch digital.">
+<Layout title="Über mich" description="Magnus Hinzke -- Unternehmer aus Lübeck. Seit 1984 in der Druckbranche, jetzt auch digital. KI-Module und Webseiten für den Mittelstand.">
   <section class="py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-3xl text-center">
+        <div class="mx-auto mb-8 flex h-32 w-32 items-center justify-center rounded-full bg-gray-200">
+          <span class="text-sm text-gray-400">Foto</span>
+        </div>
         <h1 class="text-4xl font-bold text-gray-900">Magnus Hinzke</h1>
         <p class="mt-2 text-lg text-primary">Unternehmer, Digitalisierung & KI</p>
+        <a href="https://linkedin.com/in/magnushinzke" target="_blank" rel="noopener" class="mt-2 inline-block text-sm text-primary hover:underline">LinkedIn-Profil</a>
       </div>
 
       <div class="mx-auto mt-12 max-w-3xl space-y-6 text-gray-600">
         <p class="text-lg leading-relaxed">
-          Seit über 40 Jahren führe ich mit der Volker Hinzke GmbH eine Druckerei in Lübeck.
-          Was als klassischer Repro- und Druckbetrieb begann, hat sich über die Jahrzehnte weiterentwickelt:
+          Seit 1984 führe ich mit der Volker Hinzke GmbH eine Druckerei in Lübeck -- über 2.000 Kunden in vier Jahrzehnten.
+          Was als klassischer Repro- und Druckbetrieb begann, hat sich stetig weiterentwickelt:
           Variabler Datendruck, Medienproduktion, Textildruck und Werbetechnik gehören heute zum Kerngeschäft.
         </p>
         <p class="text-lg leading-relaxed">
-          Zu unseren Kunden zählen unter anderem der VfB Lübeck, VfL Lübeck Schwartau und THW Kiel.
-          Wir produzieren alles von personalisierten Druckprodukten über technische Zeichnungen bis hin zu 
+          Zu unseren Kunden zählen unter anderem der VfB Lübeck, VfL Lübeck-Schwartau und THW Kiel.
+          Wir produzieren alles von personalisierten Druckprodukten über technische Zeichnungen bis hin zu
           Textilveredelung und Beschriftungen.
         </p>
         <p class="text-lg leading-relaxed">
-          Mit Hinzke Digital bringe ich die Erfahrung aus vier Jahrzehnten Unternehmertum zusammen mit 
-          moderner Technologie. Kein Buzzword-Bingo, sondern erprobte Lösungen, die im Mittelstand funktionieren.
-          Self-hosted, Open Source, datensouverän -- weil Unabhängigkeit zählt.
+          Mit Hinzke Digital bringe ich die Erfahrung aus vier Jahrzehnten Unternehmertum zusammen mit
+          moderner Technologie: mit <a href="/module" class="font-medium text-primary hover:underline">KI-Modulen</a> und <a href="/webseiten" class="font-medium text-primary hover:underline">professionellen Webseiten</a> für den Mittelstand.
+          Kein Buzzword-Bingo, sondern erprobte Lösungen, die im Alltag funktionieren.
+          Self-hosted, Open Source, datensouverän -- <a href="/ueber-mich#tech-stack" class="font-medium text-primary hover:underline">so arbeite ich</a>.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="bg-gray-50 py-20">
+  <!-- Referenzen -->
+  <section class="py-12">
+    <div class="mx-auto max-w-3xl px-4">
+      <h2 class="mb-8 text-center text-2xl font-bold text-gray-900">Referenzen & Kunden</h2>
+      <div class="flex flex-wrap items-center justify-center gap-12">
+        <span class="text-lg font-semibold text-gray-400">VfB Lübeck</span>
+        <span class="text-lg font-semibold text-gray-400">VfL Lübeck-Schwartau</span>
+        <span class="text-lg font-semibold text-gray-400">THW Kiel</span>
+      </div>
+      <p class="mt-6 text-center text-sm text-gray-500">Logos werden nachgereicht -- Platzhalter für Kundenlogos</p>
+    </div>
+  </section>
+
+  <section id="tech-stack" class="bg-gray-50 py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <SectionHeading
         title="Tech-Stack"
         subtitle="Technologien und Tools, mit denen ich täglich arbeite"
       />
+      <div class="mx-auto mb-8 max-w-3xl text-center text-gray-600">
+        <p>
+          Von <a href="/module/support-chat" class="font-medium text-primary hover:underline">KI & Automatisierung</a> über
+          <a href="/module/buchhaltung" class="font-medium text-primary hover:underline">Payments</a> bis
+          <a href="/module/newsletter" class="font-medium text-primary hover:underline">Infrastruktur</a> --
+          alles aus einer Hand.
+        </p>
+      </div>
       <div class="mx-auto max-w-4xl">
         <TechStackGrid />
       </div>
@@ -49,7 +75,7 @@ import CTAButton from '../components/CTAButton.astro';
     <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-gray-900">Interesse geweckt?</h2>
       <p class="mx-auto mt-4 max-w-xl text-gray-600">
-        Lassen Sie uns sprechen. Unverbindlich, direkt und auf Augenhöhe.
+        Lass uns sprechen. Unverbindlich, direkt und auf Augenhöhe.
       </p>
       <div class="mt-8">
         <CTAButton href="/kontakt" size="lg">Kontakt aufnehmen</CTAButton>

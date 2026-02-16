@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import PaketCard from '../components/PaketCard.astro';
+import CTAButton from '../components/CTAButton.astro';
 
 const pakete = [
   {
@@ -44,7 +45,7 @@ const pakete = [
       'KI-Features (Chatbot, Suche)',
       'Priority Support',
       'Performance-Optimierung',
-      'Schulung für Ihr Team',
+      'Schulung für dein Team',
       'Laufende Betreuung',
     ],
   },
@@ -59,7 +60,7 @@ const pakete = [
         subtitle="Professionelle Webseiten für jedes Budget. Modern gebaut, schnell geladen, SEO-optimiert."
       />
 
-      <div class="mx-auto grid max-w-5xl gap-8 lg:grid-cols-3">
+      <div class="mx-auto grid max-w-5xl gap-6 lg:gap-8 lg:grid-cols-3">
         {pakete.map((paket) => (
           <PaketCard
             name={paket.name}
@@ -71,14 +72,79 @@ const pakete = [
         ))}
       </div>
 
+      <!-- Feature-Vergleichstabelle -->
+      <div class="mx-auto mt-16 max-w-5xl overflow-hidden rounded-xl border border-gray-200">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead>
+              <tr class="sticky top-0 bg-gray-50">
+                <th class="px-3 py-4 font-semibold text-gray-900 sm:px-6">Feature</th>
+                <th class="px-3 py-4 text-center font-semibold text-gray-900 sm:px-6">Starter</th>
+                <th class="px-3 py-4 text-center font-semibold text-primary sm:px-6">Business</th>
+                <th class="px-3 py-4 text-center font-semibold text-gray-900 sm:px-6">Premium</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="px-3 py-3 text-gray-700 sm:px-6">Seiten</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Bis zu 5</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Bis zu 10</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Unbegrenzt</td>
+              </tr>
+              <tr class="bg-gray-50/50">
+                <td class="px-3 py-3 text-gray-700 sm:px-6">Design</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Responsive</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Responsive + CMS</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Responsive + CMS + Custom</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-3 text-gray-700 sm:px-6">SEO</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Grundlagen</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Optimierung</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Full SEO + Performance</td>
+              </tr>
+              <tr class="bg-gray-50/50">
+                <td class="px-3 py-3 text-gray-700 sm:px-6">Support</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">1 Korrektur</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">3 Korrekturen</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Priority + Schulung</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-3 text-gray-700 sm:px-6">Extras</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Kontaktformular, SSL</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Blog, Analytics, Newsletter</td>
+                <td class="px-3 py-3 text-center text-gray-600 sm:px-6">E-Commerce, KI-Features, Betreuung</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Cross-Links zu Modulen -->
+      <div class="mx-auto mt-16 max-w-3xl rounded-xl bg-gray-50 p-8 text-center">
+        <h3 class="mb-4 text-xl font-bold text-gray-900">Ergänze dein Paket mit digitalen Modulen</h3>
+        <p class="mb-6 text-gray-600">
+          Deine Webseite ist erst der Anfang. Kombiniere sie mit unseren <a href="/module" class="font-medium text-primary hover:underline">14 digitalen Modulen</a> für maximale Wirkung.
+        </p>
+        <div class="space-y-2 text-sm text-gray-600">
+          <p><strong>Premium:</strong> Perfekt kombinierbar mit unserem <a href="/module/support-chat" class="font-medium text-primary hover:underline">Support-Chat</a> für automatisierten Kundenservice.</p>
+          <p><strong>Business:</strong> Ergänze mit einem <a href="/module/newsletter" class="font-medium text-primary hover:underline">Newsletter-System</a> für regelmäßige Kundenkommunikation.</p>
+        </div>
+      </div>
+
+      <!-- FAQ -->
       <div class="mx-auto mt-16 max-w-3xl">
         <h3 class="mb-6 text-center text-2xl font-bold text-gray-900">Häufige Fragen</h3>
         <div class="space-y-4">
           {[
-            { q: 'Wie lange dauert die Umsetzung?', a: 'Starter: 1-2 Wochen. Business: 2-4 Wochen. Premium: 4-8 Wochen. Abhängig von Ihren Inhalten und Rückmeldungen.' },
-            { q: 'Was passiert nach der Fertigstellung?', a: 'Sie können die Seite selbst pflegen (Business/Premium) oder beauftragen uns mit laufender Betreuung. Hosting und SSL sind inklusive.' },
+            { q: 'Wie lange dauert die Umsetzung?', a: 'Starter: 1-2 Wochen. Business: 2-4 Wochen. Premium: 4-8 Wochen. Abhängig von deinen Inhalten und Rückmeldungen.' },
+            { q: 'Was passiert nach der Fertigstellung?', a: 'Du kannst die Seite selbst pflegen (Business/Premium) oder beauftragst uns mit laufender Betreuung. Hosting und SSL sind inklusive.' },
             { q: 'Kann ich später upgraden?', a: 'Selbstverständlich. Wir bauen modular auf, sodass ein Upgrade jederzeit möglich ist, ohne von vorne anfangen zu müssen.' },
-            { q: 'Welche Technologien werden eingesetzt?', a: 'Wir nutzen Astro, Tailwind CSS und TypeScript. Schnell, modern, wartbar. Hosting auf Ihrer eigenen Infrastruktur oder bei uns.' },
+            { q: 'Welche Technologien werden eingesetzt?', a: 'Wir nutzen Astro, Tailwind CSS und TypeScript. Schnell, modern, wartbar. Hosting auf deiner eigenen Infrastruktur oder bei uns.' },
+            { q: 'Brauche ich technische Vorkenntnisse?', a: 'Nein. Bei Business und Premium bekommst du ein CMS, mit dem du Inhalte ganz ohne Programmierkenntnisse pflegen kannst. Beim Premium-Paket ist eine Schulung inklusive.' },
+            { q: 'Ist Hosting im Preis enthalten?', a: 'Ja. Wir hosten deine Webseite auf unserer eigenen Infrastruktur -- schnell, sicher und DSGVO-konform. Keine versteckten Kosten.' },
+            { q: 'Kann ich meine Domain mitbringen?', a: 'Klar. Du kannst deine bestehende Domain verwenden oder wir registrieren eine neue für dich. Der Umzug ist unkompliziert.' },
+            { q: 'Was passiert, wenn ich Hilfe brauche?', a: 'Du erreichst uns direkt per Mail oder über das Kontaktformular. Beim Premium-Paket hast du Priority Support mit schnelleren Reaktionszeiten.' },
           ].map((faq) => (
             <details class="group rounded-lg border border-gray-200 px-6 py-4">
               <summary class="flex cursor-pointer items-center justify-between font-medium text-gray-900">

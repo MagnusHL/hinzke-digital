@@ -1,9 +1,7 @@
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
-import { Resend } from 'resend';
-
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+import { sendMail } from '../../lib/mailer';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -20,8 +18,7 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    await resend.emails.send({
-      from: 'Hinzke Digital <noreply@hinzke.de>',
+    await sendMail({
       to: import.meta.env.CONTACT_EMAIL,
       replyTo: email,
       subject: `Kontaktanfrage: ${name}${modul !== 'Keine Angabe' ? ` (${modul})` : ''}`,
