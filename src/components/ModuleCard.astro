@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  icon: string;
+}
+
+const { title, description, slug, icon } = Astro.props;
+---
+
+<a
+  href={`/module/${slug}`}
+  class="group block rounded-xl border border-gray-200 p-6 transition-all hover:border-primary/30 hover:shadow-lg"
+>
+  <div class="mb-3 text-3xl">{icon}</div>
+  <h3 class="mb-2 text-lg font-semibold text-gray-900 group-hover:text-primary">
+    {title}
+  </h3>
+  <p class="text-sm leading-relaxed text-gray-600">
+    {description}
+  </p>
+  <span class="mt-4 inline-flex items-center text-sm font-medium text-primary">
+    Mehr erfahren
+    <svg class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </span>
+</a>

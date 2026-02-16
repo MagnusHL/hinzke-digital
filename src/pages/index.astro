@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ModuleCard from '../components/ModuleCard.astro';
+import CTAButton from '../components/CTAButton.astro';
+import { getCollection } from 'astro:content';
+
+const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.data.order);
+const featuredModules = modules.slice(0, 4);
+---
+
+<Layout title="Digitale Lösungen für Ihr Unternehmen">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-gray-50 to-white py-20 md:py-32">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 md:text-6xl">
+        Digitale Lösungen<br />
+        <span class="text-primary">für Ihr Unternehmen</span>
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
+        Von der professionellen Website bis zur KI-gestützten Automatisierung. 
+        Wir digitalisieren Ihre Geschäftsprozesse -- pragmatisch, sicher und auf Ihre Branche zugeschnitten.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <CTAButton href="/webseiten" size="lg">Webseiten-Pakete</CTAButton>
+        <CTAButton href="/module" variant="secondary" size="lg">Module entdecken</CTAButton>
+      </div>
+    </div>
+  </section>
+
+  <!-- USPs -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Warum Hinzke Digital?"
+        subtitle="Praxiserfahrung trifft moderne Technologie"
+      />
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {[
+          { icon: '🤖', title: 'KI-gestützt', desc: 'Modernste KI-Technologie für intelligente Automatisierung und smarte Workflows.' },
+          { icon: '🏠', title: 'Self-hosted', desc: 'Ihre Daten auf Ihrer Infrastruktur. Volle Kontrolle, DSGVO-konform, kein Vendor-Lock-in.' },
+          { icon: '🎯', title: 'Individuell', desc: 'Keine Standardlösung von der Stange. Jedes Modul wird auf Ihr Unternehmen angepasst.' },
+          { icon: '🏭', title: '40+ Jahre Erfahrung', desc: 'Aus der Praxis für die Praxis. Digitalisierung mit Bodenhaftung statt Buzzword-Bingo.' },
+        ].map((usp) => (
+          <div class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+            <div class="mb-3 text-3xl">{usp.icon}</div>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900">{usp.title}</h3>
+            <p class="text-sm leading-relaxed text-gray-600">{usp.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Webseiten Teaser -->
+  <section class="bg-gray-50 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Professionelle Webseiten"
+        subtitle="Drei Pakete für jeden Bedarf -- von der einfachen Webpräsenz bis zum Full-Service-Paket"
+      />
+      <div class="text-center">
+        <p class="mx-auto mb-8 max-w-2xl text-gray-600">
+          Responsive, schnell, SEO-optimiert. Unsere Webseiten werden mit modernen Frameworks gebaut 
+          und auf Ihrer eigenen Infrastruktur gehostet.
+        </p>
+        <CTAButton href="/webseiten">Pakete ansehen</CTAButton>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Module -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Digitale Module"
+        subtitle="Fertige Bausteine für die Digitalisierung Ihres Unternehmens"
+      />
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {featuredModules.map((mod) => (
+          <ModuleCard
+            title={mod.data.title}
+            description={mod.data.description}
+            slug={mod.id}
+            icon={mod.data.icon}
+          />
+        ))}
+      </div>
+      <div class="mt-12 text-center">
+        <CTAButton href="/module" variant="secondary">Alle 14 Module ansehen</CTAButton>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-primary py-20 text-white">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold md:text-4xl">Bereit für den nächsten Schritt?</h2>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-blue-100">
+        Lassen Sie uns in einem unverbindlichen Gespräch herausfinden, welche digitalen Lösungen 
+        Ihr Unternehmen voranbringen.
+      </p>
+      <div class="mt-8">
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-base font-semibold text-primary transition-colors hover:bg-blue-50"
+        >
+          Beratungsgespräch vereinbaren
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

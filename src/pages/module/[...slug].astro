@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTAButton from '../../components/CTAButton.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const modules = await getCollection('module');
+  return modules.map((mod) => ({
+    params: { slug: mod.id },
+    props: { mod },
+  }));
+}
+
+const { mod } = Astro.props;
+const { Content } = await render(mod);
+---
+
+<Layout title={mod.data.title} description={mod.data.description}>
+  <article class="py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="text-5xl">{mod.data.icon}</span>
+      </div>
+
+      <h1 class="text-4xl font-bold text-gray-900">{mod.data.title}</h1>
+      <p class="mt-4 text-xl text-gray-600">{mod.data.description}</p>
+
+      <!-- Tech Stack Badges -->
+      <div class="mt-6 flex flex-wrap gap-2">
+        {mod.data.techStack.map((tech: string) => (
+          <span class="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-lg mt-12 max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-a:text-primary">
+        <Content />
+      </div>
+
+      <!-- Benefits -->
+      <div class="mt-12 rounded-xl bg-gray-50 p-8">
+        <h2 class="mb-6 text-2xl font-bold text-gray-900">Ihre Vorteile</h2>
+        <ul class="grid gap-3 sm:grid-cols-2">
+          {mod.data.benefits.map((benefit: string) => (
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-sm text-gray-700">{benefit}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Use Cases -->
+      <div class="mt-8 rounded-xl border border-gray-200 p-8">
+        <h2 class="mb-6 text-2xl font-bold text-gray-900">Typische Anwendungsfälle</h2>
+        <ul class="grid gap-3 sm:grid-cols-2">
+          {mod.data.useCases.map((useCase: string) => (
+            <li class="flex items-start gap-2">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+              <span class="text-sm text-gray-700">{useCase}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- CTAs -->
+      <div class="mt-12 flex flex-wrap gap-4">
+        <CTAButton href="/kontakt" size="lg">Beratungsgespräch buchen</CTAButton>
+        <CTAButton href="/kontakt" variant="secondary" size="lg">Individuell anfragen</CTAButton>
+      </div>
+    </div>
+  </article>
+</Layout>
