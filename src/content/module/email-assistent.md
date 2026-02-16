@@ -1,7 +1,7 @@
 ---
-title: "KI E-Mail Assistent"
+title: "KI-E-Mail-Assistent"
 description: "KI sortiert deinen Posteingang, priorisiert E-Mails und generiert Antwortvorschläge. Weniger E-Mail-Stress, mehr Fokus."
-icon: "📧"
+icon: "mail"
 techStack:
   - "N8N"
   - "OpenAI/Claude"

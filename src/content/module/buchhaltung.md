@@ -1,7 +1,7 @@
 ---
-title: "Buchhaltung"
-description: "Automatisierte Belegverarbeitung mit LexOffice und KI -- Belege erkennen, zuordnen, verbuchen. Jetzt beraten lassen."
-icon: "🧾"
+title: "KI-Buchhaltung"
+description: "Belege automatisch erkennen, kategorisieren und verbuchen -- KI-gestützt über LexOffice. Schluss mit Abtippen."
+icon: "receipt"
 techStack:
   - "N8N"
   - "LexOffice API"

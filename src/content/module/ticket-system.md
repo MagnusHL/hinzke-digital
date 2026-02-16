@@ -1,7 +1,7 @@
 ---
-title: "Ticket-System"
-description: "Helpdesk & Shared Inbox für dein Team -- self-hosted, keine Lizenzkosten. Kein Ticket geht verloren. Jetzt beraten lassen."
-icon: "🎫"
+title: "Smartes Ticketsystem"
+description: "Helpdesk mit KI-Unterstützung: Tickets automatisch kategorisieren, priorisieren und dem richtigen Mitarbeiter zuweisen. Self-hosted, ohne Lizenzkosten."
+icon: "ticket"
 techStack:
   - "FreeScout (self-hosted, Open Source)"
   - "N8N Webhooks"

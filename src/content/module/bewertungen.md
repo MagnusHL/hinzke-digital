@@ -1,7 +1,7 @@
 ---
-title: "Bewertungs-Management"
-description: "Google Reviews automatisch beantworten, Sentiment-Analyse, Alerts bei negativen Bewertungen. Dein Ruf, aktiv gemanagt."
-icon: "⭐"
+title: "KI-Bewertungsmanagement"
+description: "Google Reviews automatisch beantworten, Sentiment-Analyse, Alerts bei negativen Bewertungen. Dein Ruf, aktiv gemanagt mit KI."
+icon: "star"
 techStack:
   - "N8N"
   - "Google Business API"
