@@ -1,7 +1,7 @@
 ---
-title: "Lead-Qualifizierung"
-description: "Website-Leads automatisch bewerten, ins CRM eintragen und Follow-up senden. Kein Interessent geht mehr verloren."
-icon: "🎯"
+title: "KI-Lead-Qualifizierung"
+description: "Website-Leads automatisch bewerten, ins CRM eintragen und personalisiertes Follow-up senden. Kein Interessent geht mehr verloren."
+icon: "target"
 techStack:
   - "N8N"
   - "OpenAI / Claude"

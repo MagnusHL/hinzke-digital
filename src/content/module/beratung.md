@@ -1,7 +1,7 @@
 ---
-title: "Allgemeine Beratung"
-description: "Digitalisierung ohne Buzzwords. Prozessanalyse, KI-Readiness und Strategie -- persönlich, pragmatisch, mittelstandserprobt."
-icon: "🤝"
+title: "KI- & Digitalisierungsberatung"
+description: "Digitalisierung ohne Buzzwords. KI-Readiness, Prozessanalyse und Strategie -- persönlich, pragmatisch, mittelstandserprobt."
+icon: "handshake"
 techStack:
   - "Persönliche Beratung"
   - "Prozessanalyse"

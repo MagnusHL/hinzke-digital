@@ -1,7 +1,7 @@
 ---
-title: "Social Media Autopilot"
-description: "Social Media kostet zu viel Zeit? KI-Content automatisch auf LinkedIn, Instagram & Facebook posten. Jetzt beraten lassen."
-icon: "📱"
+title: "KI-Social-Media-Autopilot"
+description: "Social Media ohne Aufwand: KI generiert Content aus deinen Firmennews und postet automatisch auf LinkedIn, Instagram & Facebook."
+icon: "share-2"
 techStack:
   - "N8N"
   - "OpenAI / Claude"
