@@ -1,6 +1,6 @@
 ---
-title: "KI-Newsletter-System"
-description: "Newsletter ohne Mailchimp-Kosten: KI-generierte Inhalte, self-hosted, volle Datenkontrolle. DSGVO-konform ab 0 EUR/Monat."
+title: "Newsletter-Autopilot"
+description: "Newsletter ohne Mailchimp-Kosten: KI-generierte Inhalte, auf Wunsch self-hosted, volle Datenkontrolle. DSGVO-konform ab 0 EUR/Monat."
 icon: "send"
 techStack:
   - "Listmonk (self-hosted, Go + PostgreSQL)"
