@@ -1,5 +1,5 @@
 ---
-title: "KI-Buchhaltung"
+title: "Automatisierte Buchhaltung"
 description: "Belege automatisch erkennen, kategorisieren und verbuchen -- KI-gestützt über LexOffice. Schluss mit Abtippen."
 icon: "receipt"
 techStack:

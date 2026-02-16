@@ -1,5 +1,5 @@
 ---
-title: "KI-Angebotsgenerator"
+title: "Automatischer Angebotsgenerator"
 description: "Aus Kundenanfragen automatisch Angebote erstellen -- KI nutzt deine Preislisten und Vorlagen. Schneller als jeder Vertrieb."
 icon: "clipboard-list"
 techStack:
