@@ -3,7 +3,7 @@ export const prerender = false;
 
 import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import CalComWidget from '../components/CalComWidget.astro';
+import KoalendarWidget from '../components/KoalendarWidget.astro';
 import { getCollection } from 'astro:content';
 
 const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.data.order);
@@ -82,8 +82,8 @@ const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.
           </div>
         </div>
 
-        <!-- Cal.com Widget -->
-        <CalComWidget />
+        <!-- Koalendar Buchungswidget -->
+        <KoalendarWidget />
       </div>
     </div>
   </section>

@@ -26,7 +26,7 @@ Digitale Produkte & Beratung von Magnus Hinzke. Eigenständiges Geschäftsfeld n
 | **Styling** | Tailwind CSS | Utility-first |
 | **Hosting** | Dokploy | Self-hosted PaaS auf eigenem VPS |
 | **Payments** | Stripe | Checkout Sessions + Webhooks, nur für Webseiten-Pakete |
-| **Termine** | Cal.com Cloud | Ersetzt Microsoft Bookings, Free Tier, Embed-Widget |
+| **Termine** | Koalendar | Popup-Widget, Links: koalendar.com/e/hinzke-online + hinzke-automation |
 | **Email (transaktional)** | Resend | Bestätigungsmails, Kontaktformular |
 | **Email (Newsletter)** | Listmonk (self-hosted) | Go + PostgreSQL, Resend als SMTP |
 | **Email-Validierung** | Reacher (self-hosted) | Syntax/DNS/SMTP Check vor Kampagnenversand |
@@ -52,7 +52,7 @@ CTA: **"Jetzt buchen"** → Stripe Checkout
 Digitale Bausteine, die zeigen was mit KI und Automatisierung möglich ist. Kunden wissen oft gar nicht, was digitalisiert werden kann - die Module machen das sichtbar und greifbar.
 
 **Kein Stripe-Checkout für Module.** Jedes Modul hat nur Beratungs-CTAs:
-- **"Beratungsgespräch buchen"** → Cal.com
+- **"Beratungsgespräch buchen"** → Koalendar
 - **"Individuell anfragen"** → Kontaktformular
 
 Jedes Modul hat eine eigene Produktseite unter `/module/[slug]`. Neue Module = neue Markdown-Datei in der Content Collection.
@@ -61,7 +61,7 @@ Jedes Modul hat eine eigene Produktseite unter `/module/[slug]`. Neue Module = n
 |---|-------|------|-------------|---------------|
 | 1 | Online Support Chat | `support-chat` | KI-Chatbot auf Kunden-Website, trainiert auf Firmendaten (FAQ, Produkte) | N8N + OpenAI/Claude + RAG (Vektordatenbank) |
 | 2 | Ticket-System | `ticket-system` | Helpdesk & Shared Inbox für Kundenservice-Teams | FreeScout (self-hosted, Open Source) + N8N Webhooks |
-| 3 | Buchungsmodul | `buchungsmodul` | Terminbuchung / Reservierungen für Kunden-Webseiten | Cal.com White-Label oder Custom |
+| 3 | Buchungsmodul | `buchungsmodul` | Terminbuchung / Reservierungen für Kunden-Webseiten | Koalendar |
 | 4 | Buchhaltung | `buchhaltung` | LexOffice-Anbindung, automatisierte Belegverarbeitung, Rechnungsflows | N8N + LexOffice API + KI |
 | 5 | Controlling | `controlling` | Liquiditätsplanung, Cashflow-Analyse, Szenarien, Echtzeit-Dashboard | Tidely (ab 45 EUR/Monat, 5000+ Bankanbindungen) + Beratung |
 | 6 | KI E-Mail Assistent | `email-assistent` | Posteingang kategorisieren, Antwortvorschläge generieren, tägliche Zusammenfassung | N8N + OpenAI/Claude + IMAP/Gmail |
@@ -118,7 +118,7 @@ TypeScript/JavaScript, Python, Go, PHP
 ├── /module/buchhaltung            │
 ├── /module/controlling            │
 ├── /module/email-assistent        │ Alle Module: nur Beratungs-CTAs
-├── /module/bewertungen            │ (Cal.com + Kontaktformular)
+├── /module/bewertungen            │ (Koalendar + Kontaktformular)
 ├── /module/social-media           │ Kein Stripe Checkout
 ├── /module/dokumenten-ki          │
 ├── /module/angebots-generator     │
@@ -127,7 +127,7 @@ TypeScript/JavaScript, Python, Go, PHP
 ├── /module/newsletter             │
 ├── /module/beratung               ┘
 │
-├── /kontakt                       Formular + Cal.com Embed
+├── /kontakt                       Formular + Koalendar Widget
 ├── /ueber-mich                    Magnus + Tech-Stack Grid
 ├── /impressum                     Pflichtseiten
 ├── /datenschutz                   DSGVO
@@ -153,7 +153,7 @@ Webseiten-Paket auswählen → "Jetzt buchen"
 
 ```
 Modul-Seite besuchen → Interesse geweckt
-  → "Beratungsgespräch buchen" → Cal.com Buchungswidget
+  → "Beratungsgespräch buchen" → Koalendar Buchungswidget
   → ODER "Individuell anfragen" → Kontaktformular → Resend Mail an Magnus
 ```
 
@@ -193,7 +193,7 @@ Bestehende Hinzke-Druckkunden (< 2000 Adressen aus CSV) informieren: "Magnus mac
 3. Content Collection für Module (Schema + Markdown pro Modul)
 4. Content erstellen via Claude Code (Landing, Pakete, 14 Modul-Seiten, Über mich, SEO)
 5. Stripe (Products/Prices nur für 3 Webseiten-Pakete, /api/checkout, /api/webhook)
-6. Cal.com Cloud (Account, Eventtypen, Embed-Widget auf /kontakt + Modul-Seiten)
+6. Koalendar (Eventtypen, Popup-Widget auf /kontakt + Modul-Seiten)
 7. Resend, Listmonk, Reacher, Dokploy, Matomo → separates Infrastruktur-Projekt
 8. Verlinkung von hinzke.de (Banner/Link im Shopware-Shop)
 9. l3dynamics.de → 301 Redirect
@@ -239,8 +239,8 @@ Die Bilder werden in `src/pages/module/[...slug].astro` über die `ContentSectio
 
 - Eigene Domain → jederzeit auf andere GmbH übertragbar
 - Stripe-Account unabhängig vom Druckerei-Business
-- Cal.com Cloud-Account personengebunden
+- Koalendar-Account personengebunden
 - Module als Content Collection → beliebig erweiterbar ohne Code-Änderung
 - N8N Workflows reproduzierbar → einmal bauen, oft verkaufen
-- Open-Source Stack (FreeScout, Listmonk, N8N, Cal.com) → kein Vendor-Lock-in
+- Open-Source Stack (FreeScout, Listmonk, N8N) → kein Vendor-Lock-in
 - Kein Auth-Layer = keine User-Daten = weniger DSGVO-Aufwand
