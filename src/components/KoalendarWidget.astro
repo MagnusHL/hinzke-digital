@@ -1,0 +1,63 @@
+---
+interface KoalendarEvent {
+  title: string;
+  duration: string;
+  location: string;
+  description: string;
+  url: string;
+}
+
+interface Props {
+  events?: KoalendarEvent[];
+}
+
+const defaultEvents: KoalendarEvent[] = [
+  {
+    title: 'Erstgespräch Web & Digital',
+    duration: '30 Min',
+    location: 'per Video',
+    description: 'Wir schauen gemeinsam, wo dein Unternehmen digital steht und was die nächsten sinnvollen Schritte sind.',
+    url: 'https://koalendar.com/e/hinzke-online',
+  },
+  {
+    title: 'Automatisierungs-Check',
+    duration: '30 Min',
+    location: 'per Video',
+    description: 'Welche Abläufe in deinem Betrieb lassen sich automatisieren? Wir finden es raus.',
+    url: 'https://koalendar.com/e/hinzke-automation',
+  },
+];
+
+const { events = defaultEvents } = Astro.props;
+---
+
+<div>
+  <h3 class="mb-6 text-xl font-semibold text-gray-900">Beratungsgespräch buchen</h3>
+  <div class="grid gap-4">
+    {events.map((event) => (
+      <div class="rounded-xl border border-gray-200 p-6 transition-shadow hover:shadow-md">
+        <h4 class="text-lg font-semibold text-gray-900">{event.title}</h4>
+        <p class="mt-1 text-sm text-gray-500">{event.duration} · {event.location}</p>
+        <p class="mt-3 text-sm text-gray-600">{event.description}</p>
+        <a
+          href={event.url}
+          data-koalendar-widget
+          class="mt-4 inline-block rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+        >
+          Termin buchen
+        </a>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  window.Koalendar = window.Koalendar || function (...args: unknown[]) {
+    (window.Koalendar.q = window.Koalendar.q || []).push(args);
+  };
+  window.Koalendar.q = window.Koalendar.q || [];
+</script>
+<script async src="https://koalendar.com/assets/widget.js"></script>
+<script>
+  window.Koalendar('init');
+</script>
