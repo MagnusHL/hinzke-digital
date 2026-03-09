@@ -5,9 +5,11 @@ interface Props {
   features: string[];
   highlighted?: boolean;
   href: string;
+  subtitle?: string;
+  timeline?: string;
 }
 
-const { name, price, features, highlighted = false, href } = Astro.props;
+const { name, price, features, highlighted = false, href, subtitle, timeline } = Astro.props;
 ---
 
 <div
@@ -25,10 +27,13 @@ const { name, price, features, highlighted = false, href } = Astro.props;
   )}
 
   <h3 class="text-xl font-bold text-gray-900">{name}</h3>
+  {subtitle && (
+    <p class="mt-1 text-sm text-gray-500">{subtitle}</p>
+  )}
 
   <div class="mt-4 flex items-baseline">
     <span class="text-4xl font-bold text-gray-900">{price}</span>
-    <span class="ml-1 text-sm text-gray-500">EUR</span>
+    <span class="ml-1 text-sm text-gray-500">EUR netto</span>
   </div>
 
   <ul class="mt-8 flex-1 space-y-3">
@@ -42,15 +47,19 @@ const { name, price, features, highlighted = false, href } = Astro.props;
     ))}
   </ul>
 
+  {timeline && (
+    <p class="mt-6 text-center text-xs text-gray-400">{timeline}</p>
+  )}
+
   <a
     href={href}
     class:list={[
-      'mt-8 block w-full rounded-lg py-3 text-center text-sm font-semibold transition-colors',
+      'mt-4 block w-full rounded-lg py-3 text-center text-sm font-semibold transition-colors',
       highlighted
         ? 'bg-primary text-white hover:bg-blue-700'
         : 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
     ]}
   >
-    Jetzt buchen
+    Beratung anfragen
   </a>
 </div>

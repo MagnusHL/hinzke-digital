@@ -10,47 +10,67 @@ import StatsCounter from '../components/StatsCounter.astro';
 
 const pakete = [
   {
-    name: 'Starter',
-    price: 'ab 990',
+    name: 'Web Start',
+    price: '1.690',
     highlighted: false,
-    href: '#starter',
+    href: '/kontakt#beratung',
+    subtitle: 'Die ideale Basis für den Einstieg',
+    timeline: 'Realisierung: ca. 14 Tage',
     features: [
-      'Bis zu 5 Seiten',
+      'Initiales Briefing zur Ausrichtung',
+      'Hosting-Infrastruktur + SSL',
       'Responsive Design',
-      'Kontaktformular',
-      'SEO-Grundlagen',
-      'SSL-Zertifikat',
-      '1 Korrekturschleife',
+      'Logo-Integration + farbliche Anpassung',
+      'Bis zu 4 Unterseiten + Impressum/Datenschutz',
+      'Basis Keyword-Recherche (3–5 Keywords)',
+      'OnPage-Optimierung (Title, Headlines)',
+      'XML-Sitemap + robots.txt',
     ],
   },
   {
-    name: 'Business',
-    price: 'ab 2.490',
+    name: 'Web Business',
+    price: '2.890',
     highlighted: true,
-    href: '#business',
+    href: '/kontakt#beratung',
+    subtitle: 'Das Rundum-Paket für wachsende Unternehmen',
+    timeline: 'Realisierung: ca. 30 Tage',
     features: [
-      'Bis zu 10 Seiten',
-      'CMS für eigene Pflege',
-      'Blog-Funktion',
-      'Analytics-Integration',
-      'Newsletter-Anbindung',
-      'SEO-Optimierung',
-      '3 Korrekturschleifen',
+      'Initiales Briefing zur Ausrichtung',
+      'Hosting-Infrastruktur + SSL',
+      'Responsive Design + erweiterte Mobiloptimierung',
+      'Corporate Design (Logo, Farbschema, Stil)',
+      'Usability + Conversion-Optimierung',
+      'Bis zu 8 Unterseiten + Impressum/Datenschutz',
+      'Keyword-Recherche mit Report',
+      'Mitbewerberanalyse (Top 3 Konkurrenten)',
+      'OnPage-Optimierung (Title, Descriptions, Headlines, Verlinkungen)',
+      'Schema.org Markup',
+      'XML-Sitemap + robots.txt',
+      'LLMS-Datei für KI-Indizierung',
     ],
   },
   {
-    name: 'Premium',
-    price: 'ab 4.990',
+    name: 'Web Pro',
+    price: 'ab 3.990',
     highlighted: false,
-    href: '#premium',
+    href: '/kontakt#beratung',
+    subtitle: 'Maximale Sichtbarkeit und individuelle Lösung',
+    timeline: 'Realisierung: nach Absprache',
     features: [
-      'Unbegrenzte Seiten',
-      'E-Commerce-Integration',
-      'KI-Features (Chatbot, Suche)',
-      'Priority Support',
-      'Performance-Optimierung',
-      'Schulung für dein Team',
-      'Laufende Betreuung',
+      'Briefing + Content-Strategie',
+      'Hosting-Infrastruktur + SSL',
+      'Individuelles Design-System',
+      'Responsive Design + erweiterte Mobiloptimierung',
+      'Usability + Conversion-Optimierung',
+      'Individuelle Seitenanzahl + Impressum/Datenschutz',
+      'Umfangreiche Keyword-Recherche inkl. Long-Tail mit Report',
+      'Mitbewerberanalyse (Top 5 Konkurrenten)',
+      'Bildoptimierung für Ladezeiten',
+      'OnPage-Optimierung (Title, Descriptions, Headlines, Verlinkungen)',
+      'Schema.org Markup',
+      'XML-Sitemap + robots.txt',
+      'LLMS-Datei für KI-Indizierung',
+      'AIO-Optimierung (ChatGPT, Claude, Perplexity)',
     ],
   },
 ];
@@ -58,49 +78,50 @@ const pakete = [
 const highlights = [
   {
     icon: 'check',
-    title: 'Alles aus einer Hand',
-    text: 'Design, Entwicklung, Hosting und Support von einem Ansprechpartner. Keine Abstimmung zwischen fünf Dienstleistern.',
+    title: 'Erst verstehen, dann bauen',
+    text: 'Wir starten mit einem ausführlichen Briefing. Was sind deine Ziele? Wen willst du erreichen? Was macht der Wettbewerb? Daraus entsteht deine Webseite.',
   },
   {
     icon: 'check',
-    title: 'SEO von Tag 1',
-    text: 'Jede Seite wird suchmaschinenoptimiert gebaut, nicht nachträglich gefrickelt. Damit du von Anfang an gefunden wirst.',
+    title: 'SEO + KI-Sichtbarkeit',
+    text: 'Keyword-Recherche, Schema.org, LLMS-Datei für KI-Indizierung. Damit du nicht nur bei Google, sondern auch bei ChatGPT und Co. gefunden wirst.',
   },
   {
     icon: 'check',
-    title: 'DSGVO-konform',
-    text: 'Hosting auf eigener Infrastruktur in Deutschland, keine US-Cloud-Abhängigkeit. Datenschutz ohne Kompromisse.',
+    title: 'Mehr als eine Webseite',
+    text: 'Deine Seite ist der Anfang. Mit unseren digitalen Modulen erweiterst du sie um Support-Chat, Newsletter, Buchungssystem und mehr.',
   },
 ];
 
 const steps = [
   {
-    title: 'Gespräch buchen',
-    description: 'Wir klären Ziele, Zielgruppe und Umfang in einem kurzen Call.',
+    title: 'Erstgespräch',
+    description: 'Wir lernen dein Unternehmen kennen: Ziele, Zielgruppe, Wettbewerb. Kein Verkaufsgespräch, sondern echte Bestandsaufnahme.',
   },
   {
-    title: 'Konzept & Design',
-    description: 'Du bekommst einen Entwurf zur Freigabe, bevor eine Zeile Code geschrieben wird.',
+    title: 'Analyse & Konzept',
+    description: 'Mitbewerberanalyse, Keyword-Recherche und ein Konzept, das auf deinen tatsächlichen Bedarf zugeschnitten ist.',
   },
   {
     title: 'Umsetzung',
-    description: 'Wir bauen deine Seite mit modernem Tech-Stack, schnell und wartbar.',
+    description: 'Design und Entwicklung mit regelmäßigem Feedback. Du siehst früh, wohin es geht.',
   },
   {
-    title: 'Launch & Betreuung',
-    description: 'Go-Live, SEO-Check und auf Wunsch laufende Betreuung.',
+    title: 'Launch & Weiterentwicklung',
+    description: 'Go-Live mit SEO-Check. Und danach? Schau dir unsere Module an -- vom Newsletter bis zum KI-Chatbot.',
   },
 ];
 
 const faq = [
-  { q: 'Wie lange dauert die Umsetzung?', a: 'Starter: 1-2 Wochen. Business: 2-4 Wochen. Premium: 4-8 Wochen. Abhängig von deinen Inhalten und Rückmeldungen.' },
-  { q: 'Was passiert nach der Fertigstellung?', a: 'Du kannst die Seite selbst pflegen (Business/Premium) oder beauftragst uns mit laufender Betreuung. Hosting und SSL sind inklusive.' },
-  { q: 'Kann ich später upgraden?', a: 'Selbstverständlich. Wir bauen modular auf, sodass ein Upgrade jederzeit möglich ist, ohne von vorne anfangen zu müssen.' },
-  { q: 'Welche Technologien werden eingesetzt?', a: 'Wir nutzen Astro, Tailwind CSS und TypeScript. Schnell, modern, wartbar. Hosting auf deiner eigenen Infrastruktur oder bei uns.' },
-  { q: 'Brauche ich technische Vorkenntnisse?', a: 'Nein. Bei Business und Premium bekommst du ein CMS, mit dem du Inhalte ganz ohne Programmierkenntnisse pflegen kannst. Beim Premium-Paket ist eine Schulung inklusive.' },
-  { q: 'Ist Hosting im Preis enthalten?', a: 'Ja. Wir hosten deine Webseite auf unserer eigenen Infrastruktur -- schnell, sicher und DSGVO-konform. Keine versteckten Kosten.' },
+  { q: 'Wie lange dauert die Umsetzung?', a: 'Web Start: ca. 14 Tage. Web Business: ca. 30 Tage. Web Pro: nach individueller Absprache. Die Timeline hängt auch von deinen Rückmeldungen und Inhalten ab.' },
+  { q: 'Was passiert im Erstgespräch?', a: 'Wir hören zu und stellen Fragen: Was sind deine Ziele? Wen willst du erreichen? Was macht der Wettbewerb? Kein Verkaufsgespräch -- sondern eine echte Bestandsaufnahme, aus der dein Konzept entsteht.' },
+  { q: 'Welche Technologien werden eingesetzt?', a: 'Wir setzen auf ein professionelles CMS und moderne Webtechnologien -- schnell, sicher und wartbar. Die Technik wählen wir passend zu deinen Anforderungen.' },
+  { q: 'Was ist KI-Optimierung / AIO?', a: 'Neben Google nutzen immer mehr Menschen KI-Assistenten wie ChatGPT, Claude oder Perplexity, um Dienstleister zu finden. Mit einer LLMS-Datei und AIO-Optimierung sorgen wir dafür, dass auch diese Systeme deine Inhalte kennen und empfehlen.' },
+  { q: 'Brauche ich technische Vorkenntnisse?', a: 'Nein. Du bekommst ein CMS, mit dem du Inhalte ganz ohne Programmierkenntnisse pflegen kannst. Bei Fragen sind wir per Mail erreichbar.' },
+  { q: 'Gibt es ein Hosting-Angebot?', a: 'Ja. Für 49 EUR netto/Monat bieten wir ein Rundum-Sorglos-Paket mit Domain, SSL, E-Mail-Postfächern, täglichen Backups und CMS-Updates. Alternativ kannst du dein eigenes Hosting nutzen.' },
   { q: 'Kann ich meine Domain mitbringen?', a: 'Klar. Du kannst deine bestehende Domain verwenden oder wir registrieren eine neue für dich. Der Umzug ist unkompliziert.' },
-  { q: 'Was passiert, wenn ich Hilfe brauche?', a: 'Du erreichst uns direkt per Mail oder über das Kontaktformular. Beim Premium-Paket hast du Priority Support mit schnelleren Reaktionszeiten.' },
+  { q: 'Kann ich später upgraden?', a: 'Selbstverständlich. Wir bauen modular auf, sodass ein Upgrade jederzeit möglich ist, ohne von vorne anfangen zu müssen.' },
+  { q: 'Was passiert nach der Fertigstellung?', a: 'Du kannst die Seite selbst pflegen oder unser Hosting-Paket mit laufender Wartung nutzen. Und mit unseren digitalen Modulen erweiterst du deine Webseite um weitere Funktionen -- vom Newsletter bis zum KI-Chatbot.' },
 ];
 
 const breadcrumbItems = [
@@ -124,7 +145,7 @@ const faqSchema = {
 
 <Layout
   title="Webseiten-Pakete"
-  description="Professionelle Webseiten für KMU. Drei Pakete: Starter, Business, Premium. Modern, schnell, SEO-optimiert."
+  description="Professionelle Webseiten für KMU. Drei Pakete: Web Start, Web Business, Web Pro. SEO-optimiert und sichtbar für Google und KI."
   structuredData={faqSchema}
 >
   <article>
@@ -136,12 +157,12 @@ const faqSchema = {
 
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">Webseiten-Pakete</h1>
         <p class="mt-4 max-w-3xl text-lg text-gray-600 leading-relaxed">
-          Professionelle Webseiten für jedes Budget. Modern gebaut, schnell geladen, SEO-optimiert -- von der Visitenkarte im Netz bis zur Full-Service-Lösung.
+          Wir bauen nicht einfach eine Website -- wir schauen erst, was du wirklich brauchst. Im Erstgespräch klären wir Ziele, Zielgruppe und Wettbewerb. Dann entsteht eine Seite, die nicht nur gut aussieht, sondern gefunden wird -- von Google und von KI.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
-          <CTAButton href="#pakete" variant="primary" size="lg">Pakete ansehen</CTAButton>
-          <CTAButton href="/kontakt#beratung" variant="secondary" size="lg">Beratung buchen</CTAButton>
+          <CTAButton href="/kontakt#beratung" variant="primary" size="lg">Beratungsgespräch buchen</CTAButton>
+          <CTAButton href="#pakete" variant="secondary" size="lg">Pakete ansehen</CTAButton>
         </div>
       </div>
     </section>
@@ -157,6 +178,8 @@ const faqSchema = {
               features={paket.features}
               highlighted={paket.highlighted}
               href={paket.href}
+              subtitle={paket.subtitle}
+              timeline={paket.timeline}
             />
           ))}
         </div>
@@ -172,41 +195,47 @@ const faqSchema = {
               <thead>
                 <tr class="sticky top-0 bg-gray-50">
                   <th class="px-3 py-4 font-semibold text-gray-900 sm:px-6">Feature</th>
-                  <th class="px-3 py-4 text-center font-semibold text-gray-900 sm:px-6">Starter</th>
-                  <th class="px-3 py-4 text-center font-semibold text-primary sm:px-6">Business</th>
-                  <th class="px-3 py-4 text-center font-semibold text-gray-900 sm:px-6">Premium</th>
+                  <th class="px-3 py-4 text-center font-semibold text-gray-900 sm:px-6">Web Start</th>
+                  <th class="px-3 py-4 text-center font-semibold text-primary sm:px-6">Web Business</th>
+                  <th class="px-3 py-4 text-center font-semibold text-gray-900 sm:px-6">Web Pro</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-100">
                 <tr>
-                  <td class="px-3 py-3 text-gray-700 sm:px-6">Seiten</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Bis zu 5</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Bis zu 10</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Unbegrenzt</td>
+                  <td class="px-3 py-3 text-gray-700 sm:px-6">Unterseiten</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Bis zu 4</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Bis zu 8</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Individuell</td>
                 </tr>
                 <tr class="bg-gray-50/50">
                   <td class="px-3 py-3 text-gray-700 sm:px-6">Design</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Responsive</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Responsive + CMS</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Responsive + CMS + Custom</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Responsive + Farbanpassung</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Corporate Design + Conversion</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Individuelles Design-System</td>
                 </tr>
                 <tr>
                   <td class="px-3 py-3 text-gray-700 sm:px-6">SEO</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Grundlagen</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Optimierung</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Full SEO + Performance</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Basis (Title, Headlines)</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Erweitert + Mitbewerber + Schema.org</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Full SEO + AIO-Optimierung</td>
                 </tr>
                 <tr class="bg-gray-50/50">
-                  <td class="px-3 py-3 text-gray-700 sm:px-6">Support</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">1 Korrektur</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">3 Korrekturen</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Priority + Schulung</td>
+                  <td class="px-3 py-3 text-gray-700 sm:px-6">KI-Optimierung</td>
+                  <td class="px-3 py-3 text-center text-gray-400 sm:px-6">--</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">LLMS-Datei</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">LLMS + AIO</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-3 text-gray-700 sm:px-6">Extras</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Kontaktformular, SSL</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Blog, Analytics, Newsletter</td>
-                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">E-Commerce, KI-Features, Betreuung</td>
+                  <td class="px-3 py-3 text-gray-700 sm:px-6">Keyword-Analyse</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">3–5 Keywords</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Recherche + Report</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Long-Tail + Report</td>
+                </tr>
+                <tr class="bg-gray-50/50">
+                  <td class="px-3 py-3 text-gray-700 sm:px-6">Realisierung</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">ca. 14 Tage</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">ca. 30 Tage</td>
+                  <td class="px-3 py-3 text-center text-gray-600 sm:px-6">Nach Absprache</td>
                 </tr>
               </tbody>
             </table>
@@ -215,13 +244,74 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- 4. Highlights -->
+    <!-- 4. Hosting-Paket -->
+    <section class="pb-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex-1">
+              <h3 class="text-lg font-bold text-gray-900">Monatliches Hosting & Wartung</h3>
+              <p class="mt-1 text-sm text-gray-500">Optional buchbar -- kein Pflicht-Add-on</p>
+              <ul class="mt-4 grid gap-2 text-sm text-gray-600 sm:grid-cols-2">
+                <li class="flex items-start gap-2">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  1 Domain inkl. (.de oder .com)
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  SSL-Zertifikat
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  5 E-Mail-Postfächer
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  1 Datenbank
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  Tägliche Backups
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  CMS-Updates (Core + Erweiterungen)
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  Sicherheits-Monitoring
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  DSGVO-konformes Hosting in Deutschland
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  E-Mail-Support
+                </li>
+              </ul>
+            </div>
+            <div class="text-center lg:text-right">
+              <div class="flex items-baseline justify-center lg:justify-end">
+                <span class="text-3xl font-bold text-gray-900">49</span>
+                <span class="ml-1 text-sm text-gray-500">EUR netto/Monat</span>
+              </div>
+              <a href="/kontakt#beratung" class="mt-4 inline-block rounded-lg border-2 border-primary px-6 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
+                Beratung anfragen
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Highlights -->
     <Highlights items={highlights} />
 
-    <!-- 5. Prozess-Schritte -->
+    <!-- 6. Prozess-Schritte -->
     <ProcessSteps steps={steps} />
 
-    <!-- 6. Problem-Sektion -->
+    <!-- 7. Problem-Sektion -->
     <ContentSection
       heading="Deine aktuelle Website bremst dich aus"
       text="Veraltetes Design, langsame Ladezeiten, nicht mobiloptimiert -- potenzielle Kunden springen ab, bevor sie dein Angebot sehen. Jede Sekunde Ladezeit kostet dich Conversions. Und Google straft langsame Seiten in den Rankings ab."
@@ -230,10 +320,10 @@ const faqSchema = {
       bgClass="bg-gray-50"
     />
 
-    <!-- 7. Stats Counter -->
+    <!-- 8. Stats Counter -->
     <StatsCounter />
 
-    <!-- 8. Solution-Sektion -->
+    <!-- 9. Solution-Sektion -->
     <ContentSection
       heading="Eine Website, die für dich arbeitet"
       text="Schnell, modern, SEO-optimiert -- deine neue Webseite lädt in unter einer Sekunde, sieht auf jedem Gerät perfekt aus und wird von Google belohnt. Mit einem CMS kannst du Inhalte selbst pflegen, ohne Entwickler fragen zu müssen."
@@ -242,23 +332,23 @@ const faqSchema = {
       reversed
     />
 
-    <!-- 9. Cross-Links zu Modulen -->
+    <!-- 10. Cross-Links zu Modulen -->
     <section class="py-16">
       <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div class="rounded-xl bg-gray-50 p-8 text-center">
-          <h3 class="mb-4 text-xl font-bold text-gray-900">Ergänze dein Paket mit digitalen Modulen</h3>
+          <h3 class="mb-4 text-xl font-bold text-gray-900">Die Webseite ist der erste Schritt</h3>
           <p class="mb-6 text-gray-600">
-            Deine Webseite ist erst der Anfang. Kombiniere sie mit unseren <a href="/module" class="font-medium text-primary hover:underline">14 digitalen Modulen</a> für maximale Wirkung.
+            Viele unserer Kunden erweitern ihre Webseite mit unseren <a href="/module" class="font-medium text-primary hover:underline">digitalen Modulen</a>: Support-Chat für automatisierten Service, Newsletter-System für Kundenbindung, Bewertungs-Management für Google Reviews. Alles aus einer Hand.
           </p>
           <div class="space-y-2 text-sm text-gray-600">
-            <p><strong>Premium:</strong> Perfekt kombinierbar mit unserem <a href="/module/support-chat" class="font-medium text-primary hover:underline">Support-Chat</a> für automatisierten Kundenservice.</p>
-            <p><strong>Business:</strong> Ergänze mit einem <a href="/module/newsletter" class="font-medium text-primary hover:underline">Newsletter-System</a> für regelmäßige Kundenkommunikation.</p>
+            <p><strong>Web Business + Newsletter</strong> = regelmäßige <a href="/module/newsletter" class="font-medium text-primary hover:underline">Kundenkommunikation</a></p>
+            <p><strong>Web Pro + Support-Chat</strong> = <a href="/module/support-chat" class="font-medium text-primary hover:underline">24/7 erreichbar</a></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 10. FAQ -->
+    <!-- 11. FAQ -->
     <section class="py-16">
       <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <h2 class="mb-8 text-center text-3xl font-bold text-gray-900">Häufige Fragen</h2>
@@ -280,7 +370,7 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- 11. CTA Section -->
+    <!-- 12. CTA Section -->
     <section class="bg-gray-50 py-16">
       <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-gray-900">Bereit für deine neue Website?</h2>
