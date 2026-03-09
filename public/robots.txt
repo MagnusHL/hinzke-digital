@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://hinzke.online/sitemap-index.xml
+Sitemap: https://hinzke.digital/sitemap-index.xml
