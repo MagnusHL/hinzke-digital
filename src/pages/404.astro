@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<Layout title="Seite nicht gefunden" noindex={true}>
+  <section class="flex min-h-[60vh] items-center py-20">
+    <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+      <p class="text-6xl font-bold text-[#137EDE]">404</p>
+      <h1 class="mt-4 text-3xl font-bold text-gray-900">Seite nicht gefunden</h1>
+      <p class="mt-4 text-lg text-gray-600">
+        Die angeforderte Seite existiert nicht oder wurde verschoben.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <CTAButton href="/">Zur Startseite</CTAButton>
+        <CTAButton href="/kontakt" variant="secondary">Kontakt</CTAButton>
+      </div>
+    </div>
+  </section>
+</Layout>

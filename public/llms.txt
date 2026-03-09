@@ -1,0 +1,48 @@
+# Hinzke Digital
+
+> Digitale Produkte und Beratung von Magnus Hinzke, Luebeck.
+
+Hinzke Digital ist ein eigenstaendiges Geschaeftsfeld neben der Druckerei Volker Hinzke GmbH (hinzke.de). Der Fokus liegt auf digitalen Dienstleistungen fuer kleine und mittelstaendische Unternehmen.
+
+## Angebot
+
+### Webseiten-Pakete
+Professionelle Webseiten fuer KMU in drei Paketstufen (Starter, Business, Premium). Direkt online buchbar.
+- https://hinzke.digital/webseiten
+
+### KI- und Automatisierungsmodule
+Fertige digitale Bausteine, die Geschaeftsprozesse automatisieren. Jedes Modul ist einzeln buchbar ueber ein Beratungsgespraech.
+
+- Online Support Chat: KI-Chatbot trainiert auf Firmendaten
+  https://hinzke.digital/module/support-chat
+- Ticket-System: Helpdesk und Shared Inbox fuer Kundenservice
+  https://hinzke.digital/module/ticket-system
+- Buchungsmodul: Terminbuchung fuer Kunden-Webseiten
+  https://hinzke.digital/module/buchungsmodul
+- Buchhaltung: LexOffice-Anbindung und automatisierte Belegverarbeitung
+  https://hinzke.digital/module/buchhaltung
+- Controlling: Liquiditaetsplanung und Cashflow-Analyse
+  https://hinzke.digital/module/controlling
+- KI E-Mail Assistent: Posteingang kategorisieren und Antwortvorschlaege
+  https://hinzke.digital/module/email-assistent
+- Bewertungs-Management: Google Reviews automatisch beantworten
+  https://hinzke.digital/module/bewertungen
+- Social Media Autopilot: Content-Generierung und automatisches Posten
+  https://hinzke.digital/module/social-media
+- Dokumenten-KI: Rechnungen und Belege automatisch erkennen und extrahieren
+  https://hinzke.digital/module/dokumenten-ki
+- Angebots-Generator: Aus Kundenanfrage automatisch Angebot erstellen
+  https://hinzke.digital/module/angebots-generator
+- Lead-Qualifizierung: Website-Besucher bewerten und Follow-up automatisieren
+  https://hinzke.digital/module/lead-qualifizierung
+- Reporting Dashboard: Automatische Berichte aus verschiedenen Datenquellen
+  https://hinzke.digital/module/reporting
+- Newsletter-System: Self-hosted Newsletter ohne Mailchimp
+  https://hinzke.digital/module/newsletter
+- Allgemeine Beratung: Prozessoptimierung und Digitalisierungs-Strategie
+  https://hinzke.digital/module/beratung
+
+## Kontakt
+- Webseite: https://hinzke.digital
+- Kontaktformular: https://hinzke.digital/kontakt
+- Standort: Luebeck, Deutschland

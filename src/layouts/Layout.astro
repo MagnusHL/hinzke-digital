@@ -9,6 +9,7 @@ interface Props {
   ogImage?: string;
   canonicalUrl?: string;
   structuredData?: object | object[];
+  noindex?: boolean;
 }
 
 const {
@@ -17,17 +18,18 @@ const {
   ogImage = '/og-default.png',
   canonicalUrl,
   structuredData,
+  noindex = false,
 } = Astro.props;
 
 const resolvedCanonical = canonicalUrl || Astro.url.href;
 const resolvedOgImage = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site).href;
 
-const localBusinessSchema = {
+const businessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "name": "Hinzke Digital",
   "description": "Digitale Produkte & Beratung -- Webseiten, KI-Module und Automatisierung für den Mittelstand.",
-  "url": "https://hinzke.online",
+  "url": "https://hinzke.digital",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Lübeck",
@@ -38,9 +40,9 @@ const localBusinessSchema = {
 
 const allStructuredData = structuredData
   ? Array.isArray(structuredData)
-    ? [localBusinessSchema, ...structuredData]
-    : [localBusinessSchema, structuredData]
-  : [localBusinessSchema];
+    ? [businessSchema, ...structuredData]
+    : [businessSchema, structuredData]
+  : [businessSchema];
 ---
 
 <!doctype html>
@@ -50,6 +52,7 @@ const allStructuredData = structuredData
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <title>{title} | Hinzke Digital</title>
 
