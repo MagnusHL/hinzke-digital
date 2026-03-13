@@ -12,18 +12,33 @@ const featuredModules = modules.slice(0, 4);
 <Layout title="Weniger Handarbeit, mehr Ergebnis -- Hinzke Digital">
   <!-- Hero -->
   <section class="bg-gradient-to-br from-gray-50 to-white py-20 md:py-32">
-    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-      <h1 class="text-4xl font-bold tracking-tight text-gray-900 md:text-6xl">
-        Weniger Handarbeit,<br />
-        <span class="text-primary">mehr Ergebnis</span>
-      </h1>
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
-        KI-Module, Automatisierung und professionelle Webseiten -- speziell für den Mittelstand.
-        Pragmatisch umgesetzt, self-hosted, DSGVO-konform.
-      </p>
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <CTAButton href="/webseiten" size="lg">Webseiten-Pakete</CTAButton>
-        <CTAButton href="/module" variant="secondary" size="lg">Module entdecken</CTAButton>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-12 md:grid-cols-2">
+        <div>
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 md:text-6xl">
+            Weniger Handarbeit,<br />
+            <span class="text-primary">mehr Ergebnis</span>
+          </h1>
+          <p class="mt-6 max-w-xl text-lg text-gray-600">
+            KI-Module, Automatisierung und professionelle Webseiten -- speziell für den Mittelstand.
+            Pragmatisch umgesetzt, self-hosted, DSGVO-konform.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <CTAButton href="/webseiten" size="lg">Webseiten-Pakete</CTAButton>
+            <CTAButton href="/module" variant="secondary" size="lg">Module entdecken</CTAButton>
+          </div>
+        </div>
+        <div class="relative">
+          <img
+            src="/images/hero-workspace.png"
+            alt="Moderner Arbeitsplatz mit Laptop, Dashboard und Kaffee"
+            class="rounded-2xl shadow-2xl"
+            width="800"
+            height="450"
+            loading="eager"
+          />
+          <div class="absolute -inset-4 -z-10 rounded-3xl bg-primary/5"></div>
+        </div>
       </div>
     </div>
   </section>
