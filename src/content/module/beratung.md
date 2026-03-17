@@ -8,7 +8,7 @@ techStack:
   - "Workshopformate"
 benefits:
   - "Individuelle Strategie statt Standardlösung"
-  - "40+ Jahre Praxiserfahrung in der Druckbranche"
+  - "Unternehmer-Perspektive statt Berater-Theorie"
   - "Herstellerunabhängige Empfehlungen"
   - "Konkret umsetzbar im Tagesgeschäft"
   - "Open-Source-Fokus für maximale Unabhängigkeit"
@@ -39,8 +39,8 @@ highlights:
     title: "Konkret statt Foliensatz"
     text: "3-5 priorisierte Hebel mit geschätztem Aufwand und erwarteter Wirkung. Quick Wins zuerst, langfristige Projekte danach. Ein Fahrplan, den du am nächsten Tag umsetzen kannst."
   - icon: "users"
-    title: "40+ Jahre Praxiserfahrung"
-    text: "Nicht aus dem Lehrbuch, sondern aus dem Tagesgeschäft einer Druckerei mit 40+ Jahren am Markt. Die Perspektive eines Unternehmers, nicht eines Beraters."
+    title: "Unternehmer, kein Berater"
+    text: "Nicht aus dem Lehrbuch, sondern aus dem eigenen Unternehmen. Wer selbst Prozesse digitalisiert hat, weiß was im Alltag funktioniert und was nur auf Folien gut aussieht."
 steps:
   - title: "Erstgespräch"
     description: "30 Minuten, kostenlos und unverbindlich. Wir klären, wo du stehst, was dich beschäftigt und ob eine Zusammenarbeit Sinn macht."
