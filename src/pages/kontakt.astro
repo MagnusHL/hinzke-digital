@@ -1,12 +1,9 @@
 ---
-export const prerender = false;
+export const prerender = true;
 
 import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import KoalendarWidget from '../components/KoalendarWidget.astro';
-import { getCollection } from 'astro:content';
-
-const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Kontakt" description="Nimm Kontakt auf. Beratungsgespräch buchen oder individuelle Anfrage senden.">
@@ -41,21 +38,6 @@ const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.
                 required
                 class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               />
-            </div>
-            <div>
-              <label for="modul" class="mb-1 block text-sm font-medium text-gray-700">Interesse an Modul (optional)</label>
-              <select
-                id="modul"
-                name="modul"
-                class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-              >
-                <option value="">-- Bitte wählen --</option>
-                {modules.map((mod) => (
-                  <option value={mod.data.title}>{mod.data.title}</option>
-                ))}
-                <option value="Webseite">Webseite</option>
-                <option value="Sonstiges">Sonstiges</option>
-              </select>
             </div>
             <div>
               <label for="message" class="mb-1 block text-sm font-medium text-gray-700">Nachricht *</label>

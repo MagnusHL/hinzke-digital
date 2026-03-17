@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://hinzke.digital',
+  security: { checkOrigin: false },
   adapter: node({ mode: 'standalone' }),
   integrations: [
     tailwind(),

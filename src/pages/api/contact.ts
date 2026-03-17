@@ -9,8 +9,6 @@ export const POST: APIRoute = async ({ request }) => {
     const name = formData.get('name')?.toString();
     const email = formData.get('email')?.toString();
     const message = formData.get('message')?.toString();
-    const modul = formData.get('modul')?.toString() || 'Keine Angabe';
-
     if (!name || !email || !message) {
       return new Response(JSON.stringify({ error: 'Bitte alle Pflichtfelder ausfüllen' }), {
         status: 400,
@@ -21,12 +19,11 @@ export const POST: APIRoute = async ({ request }) => {
     await sendMail({
       to: import.meta.env.CONTACT_EMAIL,
       replyTo: email,
-      subject: `Kontaktanfrage: ${name}${modul !== 'Keine Angabe' ? ` (${modul})` : ''}`,
+      subject: `Kontaktanfrage: ${name}`,
       html: `
         <h1>Neue Kontaktanfrage</h1>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>E-Mail:</strong> ${email}</p>
-        <p><strong>Modul:</strong> ${modul}</p>
         <hr>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
