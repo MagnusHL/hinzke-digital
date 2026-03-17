@@ -17,7 +17,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     await sendMail({
-      to: import.meta.env.CONTACT_EMAIL,
+      to: process.env.CONTACT_EMAIL || 'magnus@hinzke.de',
       replyTo: email,
       subject: `Kontaktanfrage: ${name}`,
       html: `

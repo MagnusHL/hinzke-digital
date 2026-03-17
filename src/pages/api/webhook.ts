@@ -4,7 +4,7 @@ import type { APIRoute } from 'astro';
 import Stripe from 'stripe';
 import { sendMail } from '../../lib/mailer';
 
-const stripe = new Stripe(import.meta.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export const POST: APIRoute = async ({ request }) => {
   const signature = request.headers.get('stripe-signature');
@@ -18,7 +18,7 @@ export const POST: APIRoute = async ({ request }) => {
     const event = stripe.webhooks.constructEvent(
       body,
       signature,
-      import.meta.env.STRIPE_WEBHOOK_SECRET
+      process.env.STRIPE_WEBHOOK_SECRET!
     );
 
     if (event.type === 'checkout.session.completed') {
@@ -37,7 +37,7 @@ export const POST: APIRoute = async ({ request }) => {
         });
 
         await sendMail({
-          to: import.meta.env.CONTACT_EMAIL,
+          to: process.env.CONTACT_EMAIL || 'magnus@hinzke.de',
           subject: `Neue Buchung: ${customerEmail}`,
           html: `
             <h1>Neue Buchung eingegangen</h1>
