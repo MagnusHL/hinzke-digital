@@ -236,6 +236,22 @@ MODULES = [
             "diagram, progress tracking dashboard"
         ),
     },
+    {
+        "slug": "workflows",
+        "name": "Workflows & Automatisierung",
+        "problem": (
+            "Chaotic prepress workflow on screen: cluttered email inbox with file attachments, "
+            "messy file explorer with manually renamed PDFs in random folders, error dialogs "
+            "popping up, sticky notes with handwritten job instructions, multiple disconnected "
+            "applications open side by side with no integration"
+        ),
+        "solution": (
+            "Clean automated workflow dashboard showing n8n and Enfocus Switch connected in a "
+            "visual pipeline: file intake, automatic preflight check with green checkmarks, "
+            "job status cards showing In Progress and Completed, real-time production overview "
+            "with connected systems, minimal and organized interface"
+        ),
+    },
 ]
 
 
