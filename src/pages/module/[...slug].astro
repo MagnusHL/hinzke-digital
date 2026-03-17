@@ -8,6 +8,7 @@ import ProcessSteps from '../../components/ProcessSteps.astro';
 import ContentSection from '../../components/ContentSection.astro';
 import StatsCounter from '../../components/StatsCounter.astro';
 import { getCollection } from 'astro:content';
+import { getModuleImage } from '../../lib/images';
 
 export async function getStaticPaths() {
   const modules = await getCollection('module');
@@ -91,7 +92,7 @@ const breadcrumbItems = [
     <ContentSection
       heading={mod.data.problem.heading}
       text={mod.data.problem.text}
-      imageSrc={`/images/module/${mod.id}-problem.png`}
+      imageSrc={getModuleImage(mod.id, 'problem')}
       imageAlt={`${mod.data.title} -- Problemdarstellung`}
       bgClass="bg-gray-50"
     />
@@ -103,7 +104,7 @@ const breadcrumbItems = [
     <ContentSection
       heading={mod.data.solution.heading}
       text={mod.data.solution.text}
-      imageSrc={`/images/module/${mod.id}-solution.png`}
+      imageSrc={getModuleImage(mod.id, 'solution')}
       imageAlt={`${mod.data.title} -- Lösung`}
       reversed
     />

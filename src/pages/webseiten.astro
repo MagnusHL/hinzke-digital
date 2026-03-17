@@ -7,6 +7,8 @@ import Highlights from '../components/Highlights.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import ContentSection from '../components/ContentSection.astro';
 import StatsCounter from '../components/StatsCounter.astro';
+import webseitenProblem from '../assets/images/webseiten-problem.png';
+import webseitenSolution from '../assets/images/webseiten-solution.png';
 
 const pakete = [
   {
@@ -315,7 +317,7 @@ const faqSchema = {
     <ContentSection
       heading="Deine aktuelle Website bremst dich aus"
       text="Veraltetes Design, langsame Ladezeiten, nicht mobiloptimiert -- potenzielle Kunden springen ab, bevor sie dein Angebot sehen. Jede Sekunde Ladezeit kostet dich Conversions. Und Google straft langsame Seiten in den Rankings ab."
-      imageSrc="/images/webseiten-problem.png"
+      imageSrc={webseitenProblem}
       imageAlt="Veraltete Website mit schlechtem Design und langsamen Ladezeiten"
       bgClass="bg-gray-50"
     />
@@ -327,7 +329,7 @@ const faqSchema = {
     <ContentSection
       heading="Eine Website, die für dich arbeitet"
       text="Schnell, modern, SEO-optimiert -- deine neue Webseite lädt in unter einer Sekunde, sieht auf jedem Gerät perfekt aus und wird von Google belohnt. Mit einem CMS kannst du Inhalte selbst pflegen, ohne Entwickler fragen zu müssen."
-      imageSrc="/images/webseiten-solution.png"
+      imageSrc={webseitenSolution}
       imageAlt="Moderne, schnelle Website mit cleaner UI und Top-PageSpeed-Score"
       reversed
     />

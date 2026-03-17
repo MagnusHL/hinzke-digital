@@ -31,7 +31,7 @@ API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
-OUTPUT_DIR = PROJECT_ROOT / "public" / "images" / "module"
+OUTPUT_DIR = PROJECT_ROOT / "src" / "assets" / "images" / "module"
 
 # Pause zwischen API-Calls (Sekunden) -- Rate-Limiting
 DELAY_BETWEEN_CALLS = 5

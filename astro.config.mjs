@@ -6,6 +6,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://hinzke.digital',
   security: { checkOrigin: false },
+  image: {
+    service: { entrypoint: 'astro/assets/services/sharp' },
+  },
   adapter: node({ mode: 'standalone' }),
   integrations: [
     tailwind(),
