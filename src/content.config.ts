@@ -9,7 +9,7 @@ const module = defineCollection({
     icon: z.enum([
       'message-circle', 'ticket', 'calendar', 'receipt', 'bar-chart-3',
       'mail', 'star', 'share-2', 'file-scan', 'clipboard-list',
-      'target', 'trending-up', 'send', 'handshake', 'repeat',
+      'target', 'trending-up', 'send', 'handshake', 'repeat', 'plug',
     ]),
     techStack: z.array(z.string()),
     benefits: z.array(z.string()),

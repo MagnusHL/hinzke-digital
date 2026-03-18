@@ -237,6 +237,22 @@ MODULES = [
         ),
     },
     {
+        "slug": "schnittstellen",
+        "name": "API & Schnittstellen",
+        "problem": (
+            "Multiple disconnected software windows on screen showing different business systems "
+            "with incompatible data formats, CSV file open next to XML file with red error markers, "
+            "manual copy-paste between ERP and spreadsheet, broken file transfer dialog with timeout "
+            "error, USB stick on desk as data transport method"
+        ),
+        "solution": (
+            "Clean integration hub dashboard showing connected systems with data flowing between them "
+            "via visual API pipelines, real-time sync status indicators all green, data transformation "
+            "panel showing CSV-to-XML mapping with matched fields, webhook event log with successful "
+            "deliveries, organized and minimal interface"
+        ),
+    },
+    {
         "slug": "workflows",
         "name": "Workflows & Automatisierung",
         "problem": (
