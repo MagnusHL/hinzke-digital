@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  publishedAt: Date;
+  tags?: string[];
+}
+
+const { title, description, slug, publishedAt, tags } = Astro.props;
+
+const formattedDate = publishedAt.toLocaleDateString('de-DE', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<a
+  href={`/blog/${slug}`}
+  class="group block rounded-xl border border-gray-200 p-6 transition-all hover:border-primary/30 hover:shadow-lg"
+>
+  <time datetime={publishedAt.toISOString()} class="text-xs font-medium text-gray-400">
+    {formattedDate}
+  </time>
+  <h3 class="mt-2 mb-2 text-lg font-semibold text-gray-900 group-hover:text-primary">
+    {title}
+  </h3>
+  <p class="text-sm leading-relaxed text-gray-600">
+    {description}
+  </p>
+  {tags && tags.length > 0 && (
+    <div class="mt-4 flex flex-wrap gap-2">
+      {tags.map((tag) => (
+        <span class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600">
+          {tag}
+        </span>
+      ))}
+    </div>
+  )}
+  <span class="mt-4 inline-flex items-center text-sm font-medium text-primary">
+    Weiterlesen
+    <svg class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </span>
+</a>

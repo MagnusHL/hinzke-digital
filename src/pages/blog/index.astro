@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+---
+
+<Layout
+  title="Blog"
+  description="Praxisberichte, Case Studies und Tipps zu KI, Automatisierung und Digitalisierung für den Mittelstand."
+>
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Blog"
+        subtitle="Praxisberichte aus der Digitalisierung. Echte Projekte, konkrete Ergebnisse, nachvollziehbare Learnings."
+      />
+
+      {posts.length > 0 ? (
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              slug={post.id}
+              publishedAt={post.data.publishedAt}
+              tags={post.data.tags}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="text-center text-gray-500">Noch keine Beiträge vorhanden.</p>
+      )}
+    </div>
+  </section>
+</Layout>

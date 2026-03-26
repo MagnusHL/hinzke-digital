@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTAButton from '../../components/CTAButton.astro';
+import RelatedModules from '../../components/RelatedModules.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const modules = await getCollection('module');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post, allModules: modules },
+  }));
+}
+
+const { post, allModules } = Astro.props;
+const { Content } = await render(post);
+
+const relatedModules = post.data.modulbezug
+  ? allModules.filter((m: any) => post.data.modulbezug === m.id)
+  : [];
+
+const formattedDate = post.data.publishedAt.toLocaleDateString('de-DE', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const blogPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.publishedAt.toISOString(),
+  ...(post.data.updatedAt && { "dateModified": post.data.updatedAt.toISOString() }),
+  "author": {
+    "@type": "Person",
+    "name": "Magnus Hinzke",
+    "url": "https://hinzke.digital/ueber-mich",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hinzke Digital",
+    "url": "https://hinzke.digital",
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://hinzke.digital/blog/${post.id}`,
+  },
+};
+
+const breadcrumbItems = [
+  { label: 'Startseite', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: post.data.title },
+];
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  canonicalUrl={`https://hinzke.digital/blog/${post.id}`}
+  structuredData={blogPostingSchema}
+>
+  <article class="py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+
+      <Breadcrumb items={breadcrumbItems} />
+
+      <header class="mb-10">
+        <time datetime={post.data.publishedAt.toISOString()} class="text-sm font-medium text-gray-400">
+          {formattedDate}
+        </time>
+        <h1 class="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
+          {post.data.title}
+        </h1>
+        <p class="mt-4 text-lg text-gray-600">
+          {post.data.description}
+        </p>
+        {post.data.tags && post.data.tags.length > 0 && (
+          <div class="mt-4 flex flex-wrap gap-2">
+            {post.data.tags.map((tag) => (
+              <span class="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <div class="prose prose-gray max-w-none prose-headings:text-gray-900 prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
+        <Content />
+      </div>
+
+    </div>
+  </article>
+
+  <section class="bg-gray-50 py-16">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900">Interesse geweckt?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+        Lass uns in einem unverbindlichen Gespräch klären, wie Digitalisierung dein Unternehmen voranbringt.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <CTAButton href="/kontakt" size="lg">Beratungsgespräch buchen</CTAButton>
+        <CTAButton href="/module" variant="secondary" size="lg">Module entdecken</CTAButton>
+      </div>
+    </div>
+  </section>
+
+  {relatedModules.length > 0 && (
+    <div class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
+      <RelatedModules modules={relatedModules} />
+    </div>
+  )}
+</Layout>

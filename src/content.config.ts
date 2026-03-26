@@ -37,4 +37,17 @@ const module = defineCollection({
   }),
 });
 
-export const collections = { module };
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    publishedAt: z.coerce.date(),
+    updatedAt: z.coerce.date().optional(),
+    tags: z.array(z.string()).optional(),
+    modulbezug: z.string().optional(),
+    image: z.string().optional(),
+  }),
+});
+
+export const collections = { module, blog };
