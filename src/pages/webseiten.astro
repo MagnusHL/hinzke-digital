@@ -120,7 +120,7 @@ const faq = [
   { q: 'Welche Technologien werden eingesetzt?', a: 'Wir setzen auf ein professionelles CMS und moderne Webtechnologien -- schnell, sicher und wartbar. Die Technik wählen wir passend zu deinen Anforderungen.' },
   { q: 'Was ist KI-Optimierung / AIO?', a: 'Neben Google nutzen immer mehr Menschen KI-Assistenten wie ChatGPT, Claude oder Perplexity, um Dienstleister zu finden. Mit einer LLMS-Datei und AIO-Optimierung sorgen wir dafür, dass auch diese Systeme deine Inhalte kennen und empfehlen.' },
   { q: 'Brauche ich technische Vorkenntnisse?', a: 'Nein. Du bekommst ein CMS, mit dem du Inhalte ganz ohne Programmierkenntnisse pflegen kannst. Bei Fragen sind wir per Mail erreichbar.' },
-  { q: 'Gibt es ein Hosting-Angebot?', a: 'Ja. Für 49 EUR netto/Monat bieten wir ein Rundum-Sorglos-Paket mit Domain, SSL, E-Mail-Postfächern, täglichen Backups und CMS-Updates. Alternativ kannst du dein eigenes Hosting nutzen.' },
+  { q: 'Gibt es ein Hosting-Angebot?', a: 'Ja. Wir bieten zwei Pakete: Basic (59 EUR netto/Monat) mit Hosting, SSL, Backups, 3 Domains und E-Mail-Support. Oder Wartung (99 EUR netto/Monat) mit zusätzlichen WordPress-Updates, Sicherheits-Monitoring, 30 Min Änderungen/Monat und Telefon-Support. Alternativ kannst du dein eigenes Hosting nutzen.' },
   { q: 'Kann ich meine Domain mitbringen?', a: 'Klar. Du kannst deine bestehende Domain verwenden oder wir registrieren eine neue für dich. Der Umzug ist unkompliziert.' },
   { q: 'Kann ich später upgraden?', a: 'Selbstverständlich. Wir bauen modular auf, sodass ein Upgrade jederzeit möglich ist, ohne von vorne anfangen zu müssen.' },
   { q: 'Was passiert nach der Fertigstellung?', a: 'Du kannst die Seite selbst pflegen oder unser Hosting-Paket mit laufender Wartung nutzen. Und mit unseren digitalen Modulen erweiterst du deine Webseite um weitere Funktionen -- vom Newsletter bis zum KI-Chatbot.' },
@@ -246,63 +246,91 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- 4. Hosting-Paket -->
-    <section class="pb-16">
+    <!-- 4. Hosting-Pakete -->
+    <section id="hosting" class="pb-16">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
-          <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div class="flex-1">
-              <h3 class="text-lg font-bold text-gray-900">Monatliches Hosting & Wartung</h3>
-              <p class="mt-1 text-sm text-gray-500">Optional buchbar -- kein Pflicht-Add-on</p>
-              <ul class="mt-4 grid gap-2 text-sm text-gray-600 sm:grid-cols-2">
-                <li class="flex items-start gap-2">
-                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  1 Domain inkl. (.de oder .com)
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  SSL-Zertifikat
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  5 E-Mail-Postfächer
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  1 Datenbank
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  Tägliche Backups
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  CMS-Updates (Core + Erweiterungen)
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  Sicherheits-Monitoring
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  DSGVO-konformes Hosting in Deutschland
-                </li>
-                <li class="flex items-start gap-2">
-                  <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  E-Mail-Support
-                </li>
-              </ul>
+        <h2 class="mb-2 text-2xl font-bold text-gray-900">Hosting & Wartung</h2>
+        <p class="mb-8 text-gray-500">Optional buchbar -- kein Pflicht-Add-on. DSGVO-konformes Hosting in Deutschland.</p>
+
+        <div class="grid gap-6 lg:grid-cols-2">
+
+          <!-- Basic -->
+          <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
+            <h3 class="text-lg font-bold text-gray-900">Basic</h3>
+            <div class="mt-2 flex items-baseline">
+              <span class="text-3xl font-bold text-gray-900">59</span>
+              <span class="ml-1 text-sm text-gray-500">EUR netto/Monat</span>
             </div>
-            <div class="text-center lg:text-right">
-              <div class="flex items-baseline justify-center lg:justify-end">
-                <span class="text-3xl font-bold text-gray-900">49</span>
-                <span class="ml-1 text-sm text-gray-500">EUR netto/Monat</span>
-              </div>
-              <a href="/kontakt#beratung" class="mt-4 inline-block rounded-lg border-2 border-primary px-6 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
-                Beratung anfragen
-              </a>
-            </div>
+            <p class="mt-1 text-xs text-gray-400">70,21 EUR brutto</p>
+            <ul class="mt-6 space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Webhosting (Webspace, SSL, E-Mail-Postfächer)
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Tägliche Backups
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Let's Encrypt SSL automatisch
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                3 Domains inklusive, jede weitere +3 EUR/Monat
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                E-Mail-Support
+              </li>
+            </ul>
+            <a href="/kontakt#beratung" class="mt-6 inline-block rounded-lg border-2 border-primary px-6 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
+              Beratung anfragen
+            </a>
           </div>
+
+          <!-- Wartung -->
+          <div class="rounded-xl border-2 border-primary bg-white p-6 shadow-lg sm:p-8">
+            <div class="flex items-center gap-2">
+              <h3 class="text-lg font-bold text-gray-900">Wartung</h3>
+              <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">Empfohlen</span>
+            </div>
+            <div class="mt-2 flex items-baseline">
+              <span class="text-3xl font-bold text-gray-900">99</span>
+              <span class="ml-1 text-sm text-gray-500">EUR netto/Monat</span>
+            </div>
+            <p class="mt-1 text-xs text-gray-400">117,81 EUR brutto</p>
+            <ul class="mt-6 space-y-3 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Alles aus Basic
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Monatliche WordPress-Updates (Core, Plugins, Theme)
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Sicherheits-Monitoring
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                30 Min Änderungen/Monat inklusive
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Darüber hinaus 80 EUR/Std netto
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                Telefonischer Support
+              </li>
+            </ul>
+            <a href="/kontakt#beratung" class="mt-6 inline-block rounded-lg bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90">
+              Beratung anfragen
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
