@@ -9,9 +9,22 @@ import heroImage from '../assets/images/hero-workspace.png';
 
 const modules = (await getCollection('module')).sort((a, b) => a.data.order - b.data.order);
 const featuredModules = modules.slice(0, 4);
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Hinzke Digital",
+  "url": "https://hinzke.digital",
+  "description": "Digitale Produkte & Beratung -- Webseiten, KI-Module und Automatisierung für den Mittelstand.",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://hinzke.digital/#organization"
+  },
+  "inLanguage": "de"
+};
 ---
 
-<Layout title="Weniger Handarbeit, mehr Ergebnis -- Hinzke Digital">
+<Layout title="Weniger Handarbeit, mehr Ergebnis" structuredData={websiteSchema}>
   <!-- Hero -->
   <section class="bg-gradient-to-br from-gray-50 to-white py-20 md:py-32">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -39,6 +52,7 @@ const featuredModules = modules.slice(0, 4);
             format="webp"
             class="rounded-2xl shadow-2xl"
             loading="eager"
+            fetchpriority="high"
           />
           <div class="absolute -inset-4 -z-10 rounded-3xl bg-primary/5"></div>
         </div>

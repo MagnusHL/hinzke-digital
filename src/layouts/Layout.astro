@@ -27,15 +27,49 @@ const resolvedOgImage = ogImage.startsWith('http') ? ogImage : new URL(ogImage, 
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://hinzke.digital/#organization",
   "name": "Hinzke Digital",
+  "legalName": "Volker Hinzke GmbH",
   "description": "Digitale Produkte & Beratung -- Webseiten, KI-Module und Automatisierung für den Mittelstand.",
   "url": "https://hinzke.digital",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://hinzke.digital/favicon.svg"
+  },
+  "image": "https://hinzke.digital/og-default.png",
+  "telephone": "+494517995701",
+  "email": "info@hinzke.de",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Kanalstraße 62",
+    "postalCode": "23552",
     "addressLocality": "Lübeck",
+    "addressRegion": "Schleswig-Holstein",
     "addressCountry": "DE"
   },
-  "knowsAbout": ["KI-Automatisierung", "Webentwicklung", "Digitalisierung", "Self-Hosting"]
+  "founder": {
+    "@type": "Person",
+    "@id": "https://hinzke.digital/ueber-mich#person",
+    "name": "Magnus Hinzke"
+  },
+  "foundingDate": "1984",
+  "taxID": "DE 135 086 257",
+  "sameAs": [
+    "https://www.linkedin.com/in/mhinzke/",
+    "https://hinzke.de"
+  ],
+  "knowsAbout": ["KI-Automatisierung", "Webentwicklung", "Digitalisierung", "Self-Hosting"],
+  "areaServed": {
+    "@type": "Country",
+    "name": "DE"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+494517995701",
+    "email": "info@hinzke.de",
+    "contactType": "customer service",
+    "availableLanguage": "German"
+  }
 };
 
 const allStructuredData = structuredData

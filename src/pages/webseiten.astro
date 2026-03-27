@@ -143,12 +143,68 @@ const faqSchema = {
     },
   })),
 };
+
+const offerSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Webseiten-Pakete",
+  "description": "Professionelle Webseiten für KMU -- drei Pakete für jeden Bedarf.",
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://hinzke.digital/#organization"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Webseiten-Pakete",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Web Start",
+        "description": "Basis-Paket: bis zu 4 Unterseiten, Responsive Design, Basis-SEO. Realisierung ca. 14 Tage.",
+        "price": "1690",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1690",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Web Business",
+        "description": "Rundum-Paket: bis zu 8 Unterseiten, Corporate Design, erweiterte SEO, Schema.org, LLMS-Datei. Realisierung ca. 30 Tage.",
+        "price": "2890",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "2890",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Web Pro",
+        "description": "Premium-Paket: individuelles Design-System, Full SEO + AIO-Optimierung, individuelle Seitenanzahl.",
+        "price": "3990",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "3990",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false
+        }
+      }
+    ]
+  }
+};
 ---
 
 <Layout
   title="Webseiten-Pakete"
   description="Professionelle Webseiten für KMU. Drei Pakete: Web Start, Web Business, Web Pro. SEO-optimiert und sichtbar für Google und KI."
-  structuredData={faqSchema}
+  structuredData={[faqSchema, offerSchema]}
 >
   <article>
 

@@ -34,19 +34,33 @@ const blogPostingSchema = {
   "description": post.data.description,
   "datePublished": post.data.publishedAt.toISOString(),
   ...(post.data.updatedAt && { "dateModified": post.data.updatedAt.toISOString() }),
+  "image": "https://hinzke.digital/og-default.png",
+  "inLanguage": "de",
   "author": {
     "@type": "Person",
+    "@id": "https://hinzke.digital/ueber-mich#person",
     "name": "Magnus Hinzke",
     "url": "https://hinzke.digital/ueber-mich",
+    "jobTitle": "Geschäftsführer",
+    "sameAs": ["https://www.linkedin.com/in/mhinzke/"],
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://hinzke.digital/#organization",
     "name": "Hinzke Digital",
     "url": "https://hinzke.digital",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hinzke.digital/favicon.svg",
+    },
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": `https://hinzke.digital/blog/${post.id}`,
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["article h1", "article header p"],
   },
 };
 

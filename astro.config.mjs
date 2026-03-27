@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://hinzke.digital',
+  trailingSlash: 'always',
   security: { checkOrigin: false },
   image: {
     service: { entrypoint: 'astro/assets/services/sharp' },
@@ -15,6 +16,10 @@ export default defineConfig({
     sitemap({
       customPages: ['https://hinzke.digital/kontakt/'],
       filter: (page) => !page.includes('/danke'),
+      serialize: (item) => ({
+        ...item,
+        lastmod: new Date().toISOString(),
+      }),
     }),
   ],
 });

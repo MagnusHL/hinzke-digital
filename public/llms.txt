@@ -1,48 +1,57 @@
 # Hinzke Digital
 
-> Digitale Produkte und Beratung von Magnus Hinzke, Luebeck.
+> Digitale Produkte und Beratung von Magnus Hinzke, Luebeck. KI-Module, Automatisierung und professionelle Webseiten fuer kleine und mittelstaendische Unternehmen.
 
-Hinzke Digital ist ein eigenstaendiges Geschaeftsfeld neben der Druckerei Volker Hinzke GmbH (hinzke.de). Der Fokus liegt auf digitalen Dienstleistungen fuer kleine und mittelstaendische Unternehmen.
+Hinzke Digital ist ein eigenstaendiges Geschaeftsfeld der Volker Hinzke GmbH (gegr. 1984, hinzke.de). Der Fokus liegt auf digitalen Dienstleistungen fuer den Mittelstand: Webseiten-Entwicklung, KI-gestuetzte Automatisierung und Self-Hosted-Loesungen. Ueber 2.000 Kunden in vier Jahrzehnten.
 
-## Angebot
+## Webseiten-Pakete
 
-### Webseiten-Pakete
-Professionelle Webseiten fuer KMU in drei Paketstufen (Starter, Business, Premium). Direkt online buchbar.
-- https://hinzke.digital/webseiten
+Professionelle Webseiten fuer KMU in drei Paketstufen:
 
-### KI- und Automatisierungsmodule
+- [Web Start](https://hinzke.digital/webseiten/): Basis-Paket ab 1.690 EUR netto -- bis zu 4 Unterseiten, Responsive Design, Basis-SEO
+- [Web Business](https://hinzke.digital/webseiten/): Rundum-Paket ab 2.890 EUR netto -- Corporate Design, Schema.org, LLMS-Datei, Mitbewerberanalyse
+- [Web Pro](https://hinzke.digital/webseiten/): Premium ab 3.990 EUR netto -- individuelles Design-System, Full SEO + AIO-Optimierung
+
+### Hosting & Wartung
+
+- [Basic Hosting](https://hinzke.digital/webseiten/): 59 EUR netto/Monat -- Webhosting, SSL, Backups, 3 Domains, E-Mail-Support
+- [Wartung](https://hinzke.digital/webseiten/): 99 EUR netto/Monat -- inkl. WordPress-Updates, Sicherheits-Monitoring, 30 Min Aenderungen/Monat
+
+## KI- und Automatisierungsmodule
+
 Fertige digitale Bausteine, die Geschaeftsprozesse automatisieren. Jedes Modul ist einzeln buchbar ueber ein Beratungsgespraech.
 
-- Online Support Chat: KI-Chatbot trainiert auf Firmendaten
-  https://hinzke.digital/module/support-chat
-- Ticket-System: Helpdesk und Shared Inbox fuer Kundenservice
-  https://hinzke.digital/module/ticket-system
-- Buchungsmodul: Terminbuchung fuer Kunden-Webseiten
-  https://hinzke.digital/module/buchungsmodul
-- Buchhaltung: LexOffice-Anbindung und automatisierte Belegverarbeitung
-  https://hinzke.digital/module/buchhaltung
-- Controlling: Liquiditaetsplanung und Cashflow-Analyse
-  https://hinzke.digital/module/controlling
-- KI E-Mail Assistent: Posteingang kategorisieren und Antwortvorschlaege
-  https://hinzke.digital/module/email-assistent
-- Bewertungs-Management: Google Reviews automatisch beantworten
-  https://hinzke.digital/module/bewertungen
-- Social Media Autopilot: Content-Generierung und automatisches Posten
-  https://hinzke.digital/module/social-media
-- Dokumenten-KI: Rechnungen und Belege automatisch erkennen und extrahieren
-  https://hinzke.digital/module/dokumenten-ki
-- Angebots-Generator: Aus Kundenanfrage automatisch Angebot erstellen
-  https://hinzke.digital/module/angebots-generator
-- Lead-Qualifizierung: Website-Besucher bewerten und Follow-up automatisieren
-  https://hinzke.digital/module/lead-qualifizierung
-- Reporting Dashboard: Automatische Berichte aus verschiedenen Datenquellen
-  https://hinzke.digital/module/reporting
-- Newsletter-System: Self-hosted Newsletter ohne Mailchimp
-  https://hinzke.digital/module/newsletter
-- Allgemeine Beratung: Prozessoptimierung und Digitalisierungs-Strategie
-  https://hinzke.digital/module/beratung
+- [KI-Support-Chat](https://hinzke.digital/module/support-chat/): KI-Chatbot trainiert auf Firmendaten, beantwortet Kundenfragen 24/7
+- [Smartes Ticketsystem](https://hinzke.digital/module/ticket-system/): Helpdesk und Shared Inbox fuer Kundenservice
+- [Smarte Terminbuchung](https://hinzke.digital/module/buchungsmodul/): Online-Terminbuchung mit intelligenter Planung
+- [Automatisierte Buchhaltung](https://hinzke.digital/module/buchhaltung/): LexOffice-Anbindung und automatisierte Belegverarbeitung
+- [Intelligentes Controlling](https://hinzke.digital/module/controlling/): Liquiditaetsplanung und Cashflow-Analyse mit KI-Prognosen
+- [KI-E-Mail-Assistent](https://hinzke.digital/module/email-assistent/): Posteingang kategorisieren und Antwortvorschlaege
+- [Smartes Bewertungsmanagement](https://hinzke.digital/module/bewertungen/): Google Reviews automatisch beantworten
+- [Social Media Autopilot](https://hinzke.digital/module/social-media/): Content-Generierung und automatisches Posten
+- [Dokumenten-KI](https://hinzke.digital/module/dokumenten-ki/): Rechnungen und Belege automatisch erkennen und extrahieren
+- [Automatischer Angebotsgenerator](https://hinzke.digital/module/angebots-generator/): Aus Kundenanfrage automatisch Angebot erstellen
+- [Intelligente Lead-Qualifizierung](https://hinzke.digital/module/lead-qualifizierung/): Website-Besucher bewerten und Follow-up automatisieren
+- [Automatisiertes Reporting](https://hinzke.digital/module/reporting/): Automatische Berichte aus verschiedenen Datenquellen
+- [Newsletter-Autopilot](https://hinzke.digital/module/newsletter/): Self-hosted Newsletter ohne Mailchimp
+- [KI- & Digitalisierungsberatung](https://hinzke.digital/module/beratung/): Prozessoptimierung und Digitalisierungs-Strategie
+- [Workflows & Automatisierung](https://hinzke.digital/module/workflows/): Produktionsprozesse automatisieren mit n8n und Enfocus Switch
+- [API & Schnittstellen](https://hinzke.digital/module/schnittstellen/): Systeme ohne native Anbindung verbinden
+
+## Ueber uns
+
+- [Ueber Magnus Hinzke](https://hinzke.digital/ueber-mich/): Unternehmer seit 1984, Druckerei-Inhaber, Digitalisierung und KI
+- [Blog](https://hinzke.digital/blog/): Praxisberichte, Case Studies und Tipps zu KI und Automatisierung
 
 ## Kontakt
-- Webseite: https://hinzke.digital
-- Kontaktformular: https://hinzke.digital/kontakt
-- Standort: Luebeck, Deutschland
+
+- [Kontaktformular](https://hinzke.digital/kontakt/): Beratungsgespraech buchen oder Anfrage senden
+- Standort: Kanalstrasse 62, 23552 Luebeck, Deutschland
+- Telefon: +49 451 799 570 1
+- E-Mail: info@hinzke.de
+
+## Optional
+
+- [Impressum](https://hinzke.digital/impressum/): Rechtliche Angaben
+- [Datenschutz](https://hinzke.digital/datenschutz/): Datenschutzerklaerung
+- [Druckerei Volker Hinzke GmbH](https://hinzke.de): Stammunternehmen seit 1984
