@@ -1,136 +1,129 @@
 ---
-title: "Buchbare Beratungswebsite an einem Tag: wie hygiene-luebeck.de entstanden ist"
-description: "Case Study: Statische Astro-5-Website mit Festpreisen über Stripe Payment Links, Terminbuchung über Cal.com und GEO-first-Aufbau. 15 Commits, 93 Minuten von Grundgerüst bis Schema, kein eigener Checkout."
+title: "Beratung ohne Vertrieb: wie ein Hygiene-Beratungsangebot komplett online buchbar wird"
+description: "Case Study hygiene-luebeck.de: Festpreise statt Angebote, Buchung und Bezahlung ohne Telefon, Rechnung aus dem ERP. Warum sich auch klassische Beratung digitalisieren lässt und welche Prozesse dahinter laufen."
 publishedAt: 2026-09-21
-tags: ["case-study", "geo", "astro", "stripe", "kmu"]
+tags: ["case-study", "prozesse", "digitalisierung", "kmu"]
 modulbezug: "buchungsmodul"
 ---
 
-**Kurzfassung:** hygiene-luebeck.de ist eine statische Website für ein neues Beratungsangebot (Hygienebeauftragte für Pflegedienste, Praxen, Studios und Kindertagespflege). Kunden finden das Angebot, sehen Festpreise und bezahlen direkt, ohne dass vorher jemand telefoniert oder ein Angebot schreibt. Es gibt keinen eigenen Checkout, kein CMS und keine Nutzerkonten. Bezahlung läuft über Stripe Payment Links, Termine über ein selbst gehostetes Cal.com. Vom ersten bis zum letzten Commit vergingen 93 Minuten. Die ganze Seite ging an einem Tag live.
+**Kurzfassung:** Beratung gilt als das Gegenteil von digitalisierbar: Man telefoniert, schreibt ein Angebot, wartet auf die Zusage, vereinbart einen Termin, schreibt hinterher die Rechnung. Bei hygiene-luebeck.de läuft das anders. Der Kunde findet das Angebot, sieht Festpreise, bucht und bezahlt direkt. Termin, Bestätigung und Rechnung laufen im Hintergrund. Niemand muss vorher telefonieren, niemand schreibt ein Angebot. Das Angebot verkauft sich selbst, weil die Prozesse dahinter das zulassen.
 
-Dieser Beitrag zeigt, welche Entscheidungen das möglich gemacht haben, was konkret gebaut wurde und was noch offen ist. Die Eckdaten stehen auch auf der [Projektseite](/projekte/hygiene-luebeck-de/).
+Dieser Beitrag zeigt das Konzept: was der Kunde erlebt, was im Hintergrund passiert und welche Entscheidung das Ganze überhaupt erst möglich macht. Die technischen Eckdaten stehen auf der [Projektseite](/projekte/hygiene-luebeck-de/).
 
-## Ausgangslage
+## Die Ausgangslage
 
-- Ein Beratungsangebot startet bei null: keine Website, keine Kunden, keine Sichtbarkeit.
-- Für aktiven Vertrieb ist keine Zeit. Das Angebot muss sich selbst verkaufen.
-- Die Zielgruppe (Pflegedienste, Arztpraxen, Tattoo- und Kosmetikstudios, Kindertagespflege) sucht, wenn eine Prüfung ansteht. Dann will sie einen Preis und einen Termin, keine Kontaktanfrage mit drei Tagen Wartezeit.
-- Budget: kein neues Abo, kein neues Tool. Alles auf der vorhandenen Infrastruktur.
+Sandra Hinzke startet als Hygienebeauftragte ein Beratungsangebot für Pflegedienste, Arztpraxen, Tattoo- und Kosmetikstudios und die Kindertagespflege. Das Problem ist typisch für jedes neue Dienstleistungsangebot:
 
-## Die vier Entscheidungen, die den Tag möglich gemacht haben
+- Es gibt noch keine Kunden und keine Empfehlungen.
+- Für aktiven Vertrieb (Anrufe, Besuche, Netzwerken) fehlt die Zeit.
+- Die Zielgruppe sucht erst, wenn eine Prüfung ansteht. Dann will sie sofort wissen: Was kostet das, und wann geht es los?
 
-**1. Kein eigener Checkout.** Bezahlen heißt: ein Link zu Stripe. Kein Warenkorb, keine Zahlungslogik, keine PCI-Fragen, nichts zu warten.
+Der klassische Weg wäre: Website mit Kontaktformular, dann Telefonat, dann Angebot per E-Mail, dann warten. Jeder Schritt kostet Zeit auf beiden Seiten. Und jeder Schritt ist eine Stelle, an der der Kunde abspringt.
 
-**2. Kein CMS.** Astro 5, statisch gebaut. Inhalte liegen in Markdown und einer einzigen Config-Datei. Kein Admin-Login, keine Plugin-Updates, keine Angriffsfläche.
+## Die eine Entscheidung, die alles möglich macht: Festpreise
 
-**3. Keine Integration mit Script oder iFrame.** Stripe und Cal.com sind reine Links. Die Content Security Policy bleibt hart: `script-src 'self'`, sonst nichts. Ist ein Link in der Config leer, gibt es den Button nicht.
+Beratung lässt sich nicht digital buchen, solange jeder Auftrag individuell kalkuliert wird. Der Hebel ist deshalb kein Tool, sondern eine unternehmerische Entscheidung: **Das Angebot wird in feste Bausteine mit festen Preisen zerlegt.**
 
-**4. Eine Quelle für alle Fakten.** Preise, Leistungen, FAQ, Einzugsgebiet und Quellen stehen in `src/config.ts`. Daraus entstehen Preistabelle, JSON-LD, llms.txt, robots.txt, Footer und Sitemap. Ein Preis ändert sich an einer Stelle, alles andere zieht nach.
-
-## Was gebaut wurde
-
-**Seitenstruktur (15 Routen):**
-
-- Startseite als One-Pager mit Sprungmarken (Zielgruppen, Leistungen, Über mich, FAQ, Kontakt)
-- 4 Fachseiten je Zielgruppe: Pflegedienst, Arztpraxis, Kosmetik/Tattoo/Fußpflege, Kindertagespflege
-- 3 Ratgeber mit je rund 750 Wörtern (MD-Prüfung, Praxisbegehung Gesundheitsamt, Hygieneplan Studios nach Landesverordnung SH)
-- Leistungen, FAQ mit 17 Fragen, Kontakt, Impressum, Datenschutz, Danke-Seite als Stripe-Redirect-Ziel
-- Generiert: llms.txt, llms-full.txt, robots.txt, Sitemap
-
-**Festpreise (netto zzgl. 19 % USt):**
-
-| Baustein | Preis |
+| Baustein | Preis (netto) |
 |---|---|
-| Prüfungs-Check (2 bis 3 Stunden Begehung mit Protokoll) | 290 EUR |
+| Prüfungs-Check: Begehung vor Ort mit Protokoll | 290 EUR |
 | Prüfungsvorbereitung in 14 Tagen | 890 EUR |
-| Hygiene-Patenschaft (monatlich kündbar) | 99 EUR/Monat |
+| Hygiene-Patenschaft, monatlich kündbar | 99 EUR/Monat |
 | Studio-Paket | 249 EUR |
 | Kindertagespflege-Paket | 149 EUR |
-| Stundensatz | 85 EUR/h |
+| Alles darüber hinaus | 85 EUR/Stunde |
 
-Brutto wird nie hart eingetippt, sondern aus dem Nettopreis berechnet. Anfahrt bis 25 km inklusive.
+Anfahrt bis 25 km ist drin. Was nicht in ein Paket passt, läuft über den Stundensatz.
 
-## Bezahlen ohne Checkout: Stripe Payment Links
+Erst diese Entscheidung macht den Rest möglich. Wer Festpreise hat, braucht kein Angebot. Wer kein Angebot braucht, braucht kein Telefonat davor. Wer kein Telefonat braucht, kann direkt buchen lassen.
 
-Ein Skript mit rund 100 Zeilen legt über die Stripe-API Produkte, Preise und Payment Links an. Es ist idempotent: mehrfach ausführen ändert nichts, was schon existiert.
+## Was der Kunde erlebt
 
-- Zahlungsarten: Karte, SEPA, PayPal
-- Die Patenschaft ist ein Abo, der Rest Einmalzahlung
-- 3 Pflichtfelder im Stripe-Formular: Einrichtung, Anschrift Einsatzort, Wunschtermin
-- Telefonnummer und Rechnungsadresse sind Pflicht
-- Nach Zahlung Redirect auf die Danke-Seite
+1. **Finden.** Der Pflegedienstleiter googelt "MD-Prüfung Hygiene Checkliste" oder fragt ChatGPT. Er landet auf einem Ratgeber oder einer Fachseite für Pflegedienste.
+2. **Verstehen.** Auf jeder Seite steht der wichtigste Satz ganz oben. Danach: was das Angebot ist, was es nicht ist, was es kostet.
+3. **Buchen.** Klick auf den Baustein, Bezahlung mit Karte, SEPA oder PayPal. Im Bezahlformular gibt er Einrichtung, Einsatzort und Wunschtermin an.
+4. **Bestätigung.** Sofort nach der Zahlung landet er auf einer Danke-Seite. Die Zahlungsbestätigung kommt automatisch per E-Mail.
+5. **Termin.** Wer erst reden will, bucht ein kostenloses Erstgespräch von 20 Minuten direkt im Kalender.
+6. **Rechnung.** Kommt mit Umsatzsteuerausweis aus der Buchhaltung, nicht aus dem Zahlungsanbieter.
 
-Die Rechnung mit Umsatzsteuerausweis kommt nicht aus Stripe, sondern aus dem ERP (Obility). Stripe kassiert nur. Das hält die Buchhaltung in einem System.
+Kein Anruf, kein Angebot, kein Warten. Der ganze Vorgang dauert wenige Minuten und funktioniert auch abends um 22 Uhr.
 
-## Terminbuchung: Cal.com, selbst gehostet
+## Was im Hintergrund läuft
 
-Vorgesehen ist ein kostenloses Erstgespräch von 20 Minuten. Cal.com läuft auf dem eigenen Dokploy-Server, der Datenschutz-Abschnitt ist vorbereitet. Ehrlich gesagt: Der Buchungslink ist zum Zeitpunkt dieses Beitrags noch nicht eingetragen. Solange die Config leer ist, führen alle Termin-Buttons auf das Kontaktformular. Das ist der Vorteil von Slots statt Integrationen: Die Seite ist live und funktioniert, der Baustein kommt dazu, wenn er fertig ist.
+Das Prinzip: **Jeder Schritt, der früher ein Mensch gemacht hat, wird entweder automatisiert oder weggelassen.**
 
-## GEO-first konkret
-
-GEO heißt hier: Die Seite soll von ChatGPT, Claude, Perplexity und Google AI Overviews zitiert werden können. Was dafür eingebaut ist:
-
-- **Answer-first-Absatz** direkt unter der H1 auf jeder Seite. Bei Ratgebern steht er im Frontmatter, damit er auch in llms.txt und JSON-LD landet.
-- **JSON-LD als @graph** auf jeder Seite: ProfessionalService (mit Angeboten als UnitPriceSpecification, Umsatzsteuer explizit als nicht enthalten), Person, Article, FAQPage, BreadcrumbList, SpeakableSpecification.
-- **llms.txt** nach llmstxt.org mit Kurzprofil, Festpreisen, Einzugsgebiet und der Abgrenzung, was das Angebot nicht ist. Dazu **llms-full.txt** mit allen Seitentexten.
-- **robots.txt** mit `Allow: /` für alle und 20 explizit erlaubten KI-Crawlern (GPTBot, ClaudeBot, PerplexityBot, Google-Extended und weitere).
-- **Quellen-Komponente** auf den Fachseiten: RKI, IfSG, Landesverordnung SH, MD-Bund. Regel: keine geratenen Deep-Links.
-- **Entity-Hygiene:** Kein `sameAs` mit leerem Array. Lieber weglassen als leer.
-
-Die Abgrenzung ist dabei bewusst Teil des Contents: Sandra Hinzke ist Hygienebeauftragte, keine Hygienefachkraft (das ist eine geschützte Weiterbildung). Keine Einrichtungen nach MedIpVO, kein Prüfungsversprechen. Dieser Satz steht wortgleich in Config, FAQ, llms.txt und JSON-LD. Ein Sprachmodell, das die Seite zitiert, zitiert damit auch die Grenze.
-
-## Deployment und Sicherheit
-
-- Docker in drei Stufen: Node 22 für Dependencies und Build, nginx:alpine als Runtime
-- nginx mit CSP (`default-src 'self'; script-src 'self'`), X-Frame-Options DENY, Referrer-Policy, Permissions-Policy, nosniff
-- Assets unter `/_astro/` ein Jahr immutable gecacht
-- 301 von www auf die Hauptdomain
-- Kein Tracking, keine Cookies, keine externen Ressourcen. Das OG-Bild wird beim Build aus SVG und Portrait gerendert.
-
-**Das eine Learning, das Zeit gekostet hat:** Astro inlinet kleine Scripts standardmäßig ins HTML. Die harte CSP blockiert Inline-Scripts, und zwar still. Die Navigation sah fertig aus und tat nichts. Fix: `assetsInlineLimit: 0` in der Vite-Config, dazu ein Build-Check, der zählt, ob `<script type="module">` im HTML vorkommt. Muss null sein. Die Navigation funktioniert seitdem auch komplett ohne JavaScript.
-
-## Zeitleiste aus der Git-History
-
-| Uhrzeit | Stand |
+| Früher | Jetzt |
 |---|---|
-| 20:05 | Grundgerüst mit GEO-Elementen |
-| 20:38 | Buchbar über Stripe |
-| 21:07 | Mobil fertig (Burger-Menü, Preiskarten) |
-| 21:31 | Rechtliche Korrekturen nach Prüfung |
-| 21:38 | Schema angereichert, letzter Commit |
+| Anruf entgegennehmen, Bedarf klären | Fachseite je Zielgruppe beantwortet die Standardfragen, FAQ mit 17 Fragen |
+| Angebot kalkulieren und schreiben | Entfällt, Festpreise stehen online |
+| Auf Zusage warten, nachfassen | Entfällt, Buchung ist die Zusage |
+| Termin per E-Mail hin und her | Kunde bucht selbst im Kalender, Bestätigung und Erinnerung automatisch |
+| Zahlung anmahnen | Bezahlt wird vor der Leistung |
+| Rechnung tippen | Rechnung wird im ERP erstellt, wie jede andere Rechnung der Firma |
 
-15 Commits, zwei kurze Feature-Branches, alles am selben Abend.
+Was übrig bleibt, ist die eigentliche Beratung vor Ort. Alles andere läuft ohne Zutun.
 
-## Was das für KMU bedeutet
+**Bezahlung:** Über Zahlungslinks von Stripe. Kein eigener Shop, kein Warenkorb, kein Kundenkonto. Jeder Baustein ist ein Link. Die Patenschaft ist ein Abo, das der Kunde selbst kündigen kann.
 
-Die Frage ist nicht, ob eine Website an einem Tag geht. Die Frage ist, was man dafür weglässt.
+**Terminbuchung:** Über einen selbst gehosteten Buchungskalender (Cal.com). Der Kunde sieht freie Slots, bucht, bekommt Bestätigung und Erinnerung. Läuft auf der eigenen Infrastruktur, keine Daten bei Dritten.
 
-- **Weglassen:** eigener Checkout, CMS, Nutzerkonten, Tracking, Integrationen per Script.
-- **Behalten:** Festpreise, direkte Bezahlung, ehrliche Abgrenzung, Inhalte, die eine konkrete Frage beantworten.
-- **Kosten:** Hosting auf dem vorhandenen Server, Stripe nur pro Transaktion. Keine monatlichen Lizenzen.
+**Rechnung:** Stripe kassiert nur. Die Rechnung kommt aus dem ERP, in dem auch alle anderen Rechnungen der Firma entstehen. Buchhaltung bleibt in einem System, Steuerberater sieht keinen Unterschied.
 
-Wer ein Angebot hat, das sich in Festpreisen beschreiben lässt, braucht keinen Shop. Ein Link reicht.
+**Kontaktanfragen:** Wer trotzdem eine Frage hat, schreibt über das Formular. Die Anfrage geht ins Firmenpostfach und wird dort wie jede andere Kundenanfrage bearbeitet.
+
+## Gefunden werden, ohne Werbung zu schalten
+
+Ohne Vertrieb muss die Seite von selbst gefunden werden. Und zwar nicht nur bei Google, sondern auch dort, wo Leute inzwischen fragen: ChatGPT, Perplexity, Google AI Overviews.
+
+Dafür ist die Seite so gebaut, dass Suchmaschinen und KI-Systeme sie verstehen und zitieren können:
+
+- **Pro Zielgruppe eine eigene Seite.** Ein Pflegedienst hat andere Fragen als ein Tattoostudio. Jede Seite beantwortet die Fragen ihrer Zielgruppe, mit Quellen (RKI, Infektionsschutzgesetz, Landesverordnung).
+- **Ratgeber zu den Momenten, in denen gesucht wird:** MD-Prüfung im Pflegedienst, Praxisbegehung durch das Gesundheitsamt, Hygieneplan für Studios.
+- **Der wichtigste Satz steht immer oben.** Wer nur den ersten Absatz liest (oder eine KI, die ihn zitiert), hat die Antwort.
+- **Preise, Leistungen und Einzugsgebiet sind maschinenlesbar hinterlegt.** Eine KI, die nach "Hygieneberatung Lübeck Kosten" gefragt wird, findet die Zahl.
+- **Alle KI-Crawler dürfen rein.** Viele Seiten sperren sie aus. Hier sind sie ausdrücklich eingeladen.
+
+## Ehrlichkeit als Teil des Angebots
+
+Ein Punkt, der bei der Digitalisierung von Beratung gern untergeht: Ohne Vorgespräch muss die Seite selbst klären, was das Angebot nicht ist. Sonst bucht jemand etwas Falsches.
+
+Deshalb steht auf hygiene-luebeck.de an jeder relevanten Stelle: Sandra Hinzke ist Hygienebeauftragte, keine Hygienefachkraft (das ist eine geschützte Weiterbildung). Keine Beratung für Einrichtungen, die unter die Medizinprodukte-Verordnung fallen. Kein Versprechen, dass eine Prüfung bestanden wird.
+
+Diese Abgrenzung steht in der FAQ, auf den Fachseiten und in den maschinenlesbaren Daten. Wer bucht, weiß, was er bekommt. Das spart hinterher Diskussionen und Rückabwicklungen.
+
+## Was das gekostet hat
+
+- **Keine neuen Abos.** Website und Buchungskalender laufen auf dem vorhandenen Server.
+- **Stripe berechnet nur pro Zahlung.** Keine Grundgebühr.
+- **Umsetzung: ein Tag.** Möglich, weil auf alles verzichtet wurde, was Pflege braucht: kein Shop, kein CMS, keine Kundenkonten.
+
+## Was das für andere Dienstleister heißt
+
+Das Muster ist nicht auf Hygieneberatung beschränkt. Es funktioniert überall, wo drei Dinge zusammenkommen:
+
+1. Das Angebot lässt sich in **Festpreis-Bausteine** zerlegen.
+2. Die Zielgruppe **sucht online**, wenn sie Bedarf hat.
+3. Der Anbieter hat **keine Zeit für Vertrieb** und will sie auch nicht haben.
+
+Steuerberatung mit Erstcheck-Paket, Datenschutzbeauftragte, Energieberater, Handwerker mit Wartungspaketen, Coaches: gleiches Prinzip. Die Frage ist nie, ob die Technik das kann. Die Frage ist, ob man sich traut, Preise auf die Website zu schreiben.
 
 ## Was noch offen ist
 
-- Cal.com-Link eintragen
-- Kontaktformular an n8n-Webhook hängen (aktuell mailto)
-- IndexNow-Lauf für die erste Indexierung
-- LinkedIn und Google Business Profile für die Entity-Verknüpfung
-- 6 weitere Ratgeber für die Zielgruppen
-
-Sichtbarkeit ist im Aufbau. Ob die GEO-Bausteine greifen, zeigt sich erst über die nächsten Monate. Wenn es Zahlen gibt, gibt es hier ein Update.
+Die Seite ist live, das Angebot ist buchbar. Aber ehrlich: Sichtbarkeit baut sich über Monate auf, nicht über Nacht. Offen sind noch weitere Ratgeber, das Google-Unternehmensprofil und die Verknüpfung mit LinkedIn. Ob und wie die KI-Systeme die Seite aufgreifen, zeigt sich in den nächsten Monaten. Wenn es Zahlen gibt, gibt es hier ein Update.
 
 ## Häufige Fragen
 
-**Warum kein Shopsystem?**
-Sechs Bausteine mit Festpreis brauchen keinen Warenkorb. Stripe Payment Links decken Karte, SEPA, PayPal und Abos ab, ohne dass etwas entwickelt oder gewartet werden muss.
+**Verkauft sich Beratung wirklich ohne Gespräch?**
+Standardleistungen ja. Wer erst reden will, bucht das kostenlose Erstgespräch. Der Unterschied: Der Kunde entscheidet, ob er ein Gespräch braucht, nicht der Anbieter.
 
-**Warum statisch statt WordPress?**
-Kein Login, keine Plugin-Updates, keine Datenbank. Die Seite besteht aus HTML-Dateien hinter nginx. Angriffsfläche und Betriebskosten sind minimal.
+**Warum Vorkasse?**
+Weil es die Zahlungsmoral vom Prozess entkoppelt. Keine Mahnungen, kein Nachfassen. Bei Festpreisen unter 1.000 EUR akzeptieren das die meisten Kunden ohne Diskussion.
 
-**Was kostet der Betrieb?**
-Der Container läuft auf dem vorhandenen Dokploy-Server. Stripe berechnet Gebühren nur pro Zahlung. Es gibt kein monatliches Abo.
+**Was passiert, wenn jemand das falsche Paket bucht?**
+Das Bezahlformular fragt Einrichtung, Einsatzort und Wunschtermin ab. Passt etwas nicht, ist das vor dem Termin sichtbar und wird geklärt. Die klare Abgrenzung auf der Seite sorgt dafür, dass das selten vorkommt.
 
-**Lässt sich das auf andere Beratungsangebote übertragen?**
-Ja, wenn das Angebot in Festpreisen beschreibbar ist und die Zielgruppe online sucht. Steuerberatung, Coaching, Handwerker-Checks, Datenschutzberatung: gleiches Muster, andere Config.
+**Braucht man dafür einen Online-Shop?**
+Nein. Sechs Bausteine mit festem Preis brauchen keinen Warenkorb. Ein Zahlungslink pro Baustein reicht.
+
+**Lässt sich das mit dem bestehenden ERP verbinden?**
+Ja, das ist sogar der Punkt. Die Buchung ist nur der Einstieg. Rechnung, Buchhaltung und Kundenstamm bleiben dort, wo sie schon sind.
