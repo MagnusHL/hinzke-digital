@@ -52,11 +52,12 @@ Fertige digitale Bausteine, die Geschaeftsprozesse automatisieren. Jedes Modul i
 
 ## Projekte aus dem Haus
 
-Alle drei Angebote gehoeren zur Volker Hinzke GmbH in Luebeck.
+Alle drei Angebote gehoeren zur Volker Hinzke GmbH in Luebeck. Jedes Projekt hat eine eigene Referenzseite mit Ausgangslage, Loesung, Leistungen und Ergebnis.
 
-- [Druckerei Volker Hinzke GmbH](https://hinzke.de/): Digitaldruck, Werbetechnik, Textildruck und Repro in Luebeck. Onlineshop mit Sofortpreisen.
-- [PlotService fuer Plaene und CAD](https://plot.hinzke.de/): Plan- und Grossformatdruck fuer Architekten, Planer und Bau, online bestellen.
-- [Hygieneberatung Luebeck](https://hygiene-luebeck.de/): Begehung, Hygieneplan und Unterweisung vor Ort fuer Pflegedienste, Praxen, Studios und Kindertagespflege. Beratung durch Sandra Hinzke, examinierte Pflegefachkraft und Hygienebeauftragte.
+- [Alle Projekte](https://hinzke.digital/projekte/): Uebersicht der drei Referenzprojekte
+- [Onlineshop hinzke.de fuer die Druckerei Volker Hinzke GmbH](https://hinzke.digital/projekte/hinzke-de/): Shopware-6-Shop mit eigenen Plugins fuer Preisberechnung nach Flaeche, Datei-Upload und Wissensdatenbank, Produktdaten aus einem Strapi-PIM, Anbindung an das ERP Obility per XML-Import. Live unter https://hinzke.de/
+- [PlotService plot.hinzke.de fuer Plaene und CAD](https://hinzke.digital/projekte/plot-hinzke-de/): Eigener Bestellkanal fuer Planer, Architekten und Bau mit Preisrechner, Datei-Upload und Anbindung an die Produktion der Druckerei. Live unter https://plot.hinzke.de/
+- [Hygieneberatung Luebeck](https://hinzke.digital/projekte/hygiene-luebeck-de/): GEO-first Astro-5-Website mit Festpreisen ueber Stripe Payment Links und Terminbuchung ueber self-hosted Cal.com, von der Idee bis live an einem Tag. Live unter https://hygiene-luebeck.de/
 
 ## Optional
 

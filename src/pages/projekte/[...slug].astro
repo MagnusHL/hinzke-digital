@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTAButton from '../../components/CTAButton.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projekte = await getCollection('projekt');
+  return projekte.map((projekt) => ({
+    params: { slug: projekt.id },
+    props: { projekt },
+  }));
+}
+
+const { projekt } = Astro.props;
+const { data } = projekt;
+
+// Jahr aus dem Zeitraum ziehen ("seit 2024" -> "2024")
+const jahr = data.zeitraum.match(/\d{4}/)?.[0];
+
+const creativeWorkSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": data.title,
+  "url": data.url,
+  "description": data.description,
+  "creator": {
+    "@id": "https://hinzke.digital/#organization",
+  },
+  "about": data.branche,
+  ...(jahr ? { "dateCreated": jahr } : {}),
+  "keywords": data.techStack,
+};
+
+const faqSchema = data.faq && data.faq.length > 0
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": data.faq.map((item: { question: string; answer: string }) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer,
+        },
+      })),
+    }
+  : null;
+
+const structuredData = faqSchema
+  ? [creativeWorkSchema, faqSchema]
+  : creativeWorkSchema;
+
+const breadcrumbItems = [
+  { label: 'Startseite', href: '/' },
+  { label: 'Projekte', href: '/projekte/' },
+  { label: data.title },
+];
+---
+
+<Layout
+  title={data.title}
+  description={data.description}
+  canonicalUrl={`https://hinzke.digital/projekte/${projekt.id}/`}
+  structuredData={structuredData}
+>
+  <article>
+
+    <!-- 1. Hero -->
+    <section class="bg-gray-50 py-16 md:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <Breadcrumb items={breadcrumbItems} />
+
+        <p class="mb-3 text-sm font-medium uppercase tracking-wider text-gray-500">{data.branche}</p>
+        <h1 class="text-3xl font-bold leading-tight text-gray-900 md:text-4xl">{data.title}</h1>
+        <p class="mt-4 max-w-3xl text-lg leading-relaxed text-gray-600">{data.description}</p>
+
+        {data.techStack.length > 0 && (
+          <div class="mt-6 flex flex-wrap gap-2">
+            {data.techStack.map((tech: string) => (
+              <span class="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <CTAButton href={data.url} size="lg">Projekt live ansehen</CTAButton>
+          <CTAButton href="/kontakt" variant="secondary" size="lg">Ähnliches Projekt anfragen</CTAButton>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Kurzdaten -->
+    <section class="py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 class="mb-8 text-3xl font-bold text-gray-900">Kurzdaten</h2>
+        <div class="overflow-hidden rounded-xl border border-gray-200">
+          <table class="w-full text-left">
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <th scope="row" class="w-40 bg-gray-50 px-6 py-4 align-top text-sm font-semibold text-gray-900">Kunde</th>
+                <td class="px-6 py-4 text-gray-700">{data.kunde}</td>
+              </tr>
+              <tr>
+                <th scope="row" class="bg-gray-50 px-6 py-4 align-top text-sm font-semibold text-gray-900">Branche</th>
+                <td class="px-6 py-4 text-gray-700">{data.branche}</td>
+              </tr>
+              <tr>
+                <th scope="row" class="bg-gray-50 px-6 py-4 align-top text-sm font-semibold text-gray-900">Zeitraum</th>
+                <td class="px-6 py-4 text-gray-700">{data.zeitraum}</td>
+              </tr>
+              <tr>
+                <th scope="row" class="bg-gray-50 px-6 py-4 align-top text-sm font-semibold text-gray-900">Stack</th>
+                <td class="px-6 py-4 text-gray-700">{data.techStack.join(', ')}</td>
+              </tr>
+              <tr>
+                <th scope="row" class="bg-gray-50 px-6 py-4 align-top text-sm font-semibold text-gray-900">Live</th>
+                <td class="px-6 py-4">
+                  <a href={data.url} target="_blank" rel="noopener" class="font-medium text-primary hover:underline">{data.url}</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Ausgangslage -->
+    <section class="bg-gray-50 py-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h2 class="mb-4 text-3xl font-bold text-gray-900">Ausgangslage</h2>
+        <p class="text-lg leading-relaxed text-gray-600">{data.ausgangslage}</p>
+      </div>
+    </section>
+
+    <!-- 4. Lösung -->
+    <section class="py-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h2 class="mb-4 text-3xl font-bold text-gray-900">Lösung</h2>
+        <p class="text-lg leading-relaxed text-gray-600">{data.loesung}</p>
+      </div>
+    </section>
+
+    <!-- 5. Leistungen -->
+    <section class="bg-gray-50 py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 class="mb-8 text-3xl font-bold text-gray-900">Leistungen</h2>
+        <ul class="grid gap-4 sm:grid-cols-2">
+          {data.leistungen.map((leistung: string) => (
+            <li class="flex items-start gap-3 rounded-lg bg-white p-4">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">{leistung}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. Ergebnis -->
+    <section class="py-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h2 class="mb-8 text-3xl font-bold text-gray-900">Ergebnis</h2>
+        <ul class="space-y-4">
+          {data.ergebnis.map((punkt: string) => (
+            <li class="flex items-start gap-3 rounded-lg border border-gray-200 p-4">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">{punkt}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    {data.faq && data.faq.length > 0 && (
+      <section class="bg-gray-50 py-16">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 class="mb-8 text-center text-3xl font-bold text-gray-900">Häufige Fragen</h2>
+          <div class="space-y-3">
+            {data.faq.map((item: { question: string; answer: string }) => (
+              <details class="group rounded-xl border border-gray-200 bg-white">
+                <summary class="flex cursor-pointer items-center justify-between px-6 py-4 text-left font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                  <span>{item.question}</span>
+                  <svg class="h-5 w-5 flex-shrink-0 text-gray-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div class="px-6 pb-4 leading-relaxed text-gray-600">
+                  {item.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- 8. CTA -->
+    <section class="py-16">
+      <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900">Sowas auch für dich?</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
+          Lass uns in einem unverbindlichen Gespräch klären, was in deinem Fall sinnvoll ist.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <CTAButton href="/kontakt" size="lg">Beratungsgespräch buchen</CTAButton>
+          <CTAButton href="/projekte/" variant="secondary" size="lg">Alle Projekte</CTAButton>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</Layout>

@@ -37,6 +37,25 @@ const module = defineCollection({
   }),
 });
 
+const projekt = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/projekt' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    url: z.string().url(),
+    kunde: z.string(),
+    branche: z.string(),
+    zeitraum: z.string(),
+    techStack: z.array(z.string()),
+    leistungen: z.array(z.string()),
+    ausgangslage: z.string(),
+    loesung: z.string(),
+    ergebnis: z.array(z.string()),
+    order: z.number(),
+    faq: z.array(z.object({ question: z.string(), answer: z.string() })).optional(),
+  }),
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
@@ -50,4 +69,4 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { module, blog };
+export const collections = { module, projekt, blog };

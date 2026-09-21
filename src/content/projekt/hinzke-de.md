@@ -1,0 +1,41 @@
+---
+title: "Onlineshop hinzke.de für die Druckerei Volker Hinzke GmbH"
+description: "Shopware-6-Shop mit eigenen Plugins, PIM-Anbindung und ERP-Import für eine Druckerei in Lübeck. Sofortpreise online, Produktionsdaten direkt im ERP."
+url: "https://hinzke.de/"
+kunde: "Volker Hinzke GmbH"
+branche: "Druck"
+zeitraum: "seit 2024"
+techStack:
+  - "Shopware 6"
+  - "Eigene Shopware-Plugins"
+  - "Strapi (PIM)"
+  - "Obility ERP (XML-Import)"
+  - "n8n"
+  - "Matomo"
+  - "Microsoft Clarity"
+leistungen:
+  - "Shopware-6-Shop aufgesetzt und betrieben"
+  - "Eigenes Plugin für Preisberechnung nach Fläche"
+  - "Eigenes Plugin für Datei-Upload von Druckdaten"
+  - "Eigenes Plugin für die Wissensdatenbank"
+  - "Produktdatenpflege über ein eigenes PIM auf Strapi-Basis"
+  - "Anbindung an das ERP Obility per XML-Import"
+  - "Automatisierungen mit n8n"
+  - "Analytics mit Matomo und Microsoft Clarity"
+  - "GEO-Optimierung mit llms.txt, Schema.org und Branchen-Landingpages"
+ausgangslage: "Eine lokale Druckerei mit 40 Jahren Bestand. Die Kunden bestellen per E-Mail und im Laden. Der Onlineshop kommt als Ergänzung dazu, nicht als Ersatz: Er zeigt Sofortpreise und nimmt Bestellungen rund um die Uhr an, während Annahme und Beratung vor Ort weiterlaufen."
+loesung: "Grundlage ist Shopware 6, erweitert um eigene Plugins für die Preisberechnung nach Fläche, den Datei-Upload von Druckdaten und eine Wissensdatenbank. Die Produktdaten kommen aus einem eigenen PIM auf Strapi-Basis, Bestellungen laufen per XML-Import in das ERP Obility. n8n übernimmt die Automatisierungen dazwischen. Matomo und Microsoft Clarity liefern die Auswertung, die GEO-Optimierung mit llms.txt, Schema.org und Branchen-Landingpages macht das Angebot für Suchmaschinen und Sprachmodelle lesbar."
+ergebnis:
+  - "Bestellungen und Anfragen kommen inzwischen auch über KI-Suchen wie ChatGPT."
+  - "Der Shop ist im lokalen Wettbewerb das Alleinstellungsmerkmal."
+  - "Sofortpreise sind online abrufbar, ohne dass jemand ein Angebot schreiben muss."
+  - "Bestelldaten landen per XML-Import direkt im ERP statt in einer E-Mail."
+order: 1
+faq:
+  - question: "Warum ein eigener Shop statt einer Plattform?"
+    answer: "Der Shop ist im lokalen Wettbewerb das Alleinstellungsmerkmal. Preisberechnung nach Fläche, Datei-Upload für Druckdaten und die Anbindung an das ERP lassen sich auf einer fremden Plattform nicht abbilden."
+  - question: "Wie kommen die Bestellungen in die Produktion?"
+    answer: "Über einen XML-Import in das ERP Obility. Die Bestelldaten landen direkt dort, wo die Aufträge ohnehin bearbeitet werden, statt in einem separaten Postfach."
+  - question: "Was bringt die GEO-Optimierung?"
+    answer: "Bestellungen und Anfragen kommen inzwischen auch über KI-Suchen wie ChatGPT. Dafür sorgen llms.txt, Schema.org-Auszeichnung und Branchen-Landingpages, die die Leistungen in klarer Sprache beschreiben."
+---
