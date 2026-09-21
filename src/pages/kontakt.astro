@@ -3,7 +3,7 @@ export const prerender = true;
 
 import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import KoalendarWidget from '../components/KoalendarWidget.astro';
+import CalcomWidget from '../components/CalcomWidget.astro';
 ---
 
 <Layout title="Kontakt" description="Nimm Kontakt auf. Beratungsgespräch buchen oder individuelle Anfrage senden.">
@@ -64,8 +64,8 @@ import KoalendarWidget from '../components/KoalendarWidget.astro';
           </div>
         </div>
 
-        <!-- Koalendar Buchungswidget -->
-        <KoalendarWidget />
+        <!-- Cal.com Buchungswidget (self-hosted) -->
+        <CalcomWidget />
       </div>
     </div>
   </section>

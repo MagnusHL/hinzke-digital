@@ -3,11 +3,12 @@ title: "Smarte Terminbuchung"
 description: "Online-Terminbuchung mit intelligenter Planung -- Kunden buchen selbst, KI optimiert Auslastung und reduziert No-Shows."
 icon: "calendar"
 techStack:
-  - "Koalendar"
+  - "Cal.com (self-hosted)"
 benefits:
   - "Kein Telefon-Pingpong mehr bei der Terminvereinbarung"
   - "Automatische Bestätigungen und Erinnerungen per E-Mail"
-  - "Kalender-Sync mit Google, Outlook und Apple"
+  - "Kalender-Sync mit Google, Outlook, Apple und CalDAV"
+  - "Selbst gehostet: Termindaten bleiben auf dem eigenen Server"
   - "Vollständig anpassbar an dein Branding"
 useCases:
   - "Beratungstermine für Dienstleister"
@@ -21,7 +22,7 @@ relatedModules:
   - "lead-qualifizierung"
 faq:
   - question: "Funktioniert das mit meinem bestehenden Kalender?"
-    answer: "Ja. Koalendar synchronisiert mit Google Calendar, Outlook und Apple Calendar. Bereits gebuchte Termine werden automatisch geblockt, Doppelbuchungen sind ausgeschlossen."
+    answer: "Ja. Cal.com synchronisiert mit Google Calendar, Outlook, Apple Calendar und CalDAV (z.B. Nextcloud). Bereits gebuchte Termine werden automatisch geblockt, Doppelbuchungen sind ausgeschlossen."
   - question: "Können Kunden Termine auch stornieren oder verschieben?"
     answer: "Ja, in der Bestätigungsmail erhält der Kunde Links zum Verschieben oder Stornieren. Der Slot wird automatisch wieder freigegeben. Du kannst Stornierungsfristen individuell festlegen."
   - question: "Lässt sich das Design an meine Website anpassen?"
