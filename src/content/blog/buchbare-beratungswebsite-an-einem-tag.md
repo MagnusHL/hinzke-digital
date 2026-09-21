@@ -8,7 +8,7 @@ modulbezug: "buchungsmodul"
 
 **Kurzfassung:** Beratung gilt als das Gegenteil von digitalisierbar: Man telefoniert, schreibt ein Angebot, wartet auf die Zusage, vereinbart einen Termin, schreibt hinterher die Rechnung. Bei hygiene-luebeck.de läuft das anders. Der Kunde findet das Angebot, sieht Festpreise, bucht und bezahlt direkt. Termin, Bestätigung und Rechnung laufen im Hintergrund. Niemand muss vorher telefonieren, niemand schreibt ein Angebot. Das Angebot verkauft sich selbst, weil die Prozesse dahinter das zulassen.
 
-Dieser Beitrag zeigt das Konzept: was der Kunde erlebt, was im Hintergrund passiert und welche Entscheidung das Ganze überhaupt erst möglich macht. Die technischen Eckdaten stehen auf der [Projektseite](/projekte/hygiene-luebeck-de/).
+Dieser Beitrag zeigt das Konzept: was der Kunde erlebt, was im Hintergrund passiert und welche Entscheidung das Ganze überhaupt erst möglich macht. Die technischen Eckdaten stehen auf der [Projektseite](/projekte/hygiene-luebeck-de/), die Seite selbst unter [hygiene-luebeck.de](https://hygiene-luebeck.de/).
 
 ## Die Ausgangslage
 
@@ -107,9 +107,9 @@ Das Muster ist nicht auf Hygieneberatung beschränkt. Es funktioniert überall, 
 
 Steuerberatung mit Erstcheck-Paket, Datenschutzbeauftragte, Energieberater, Handwerker mit Wartungspaketen, Coaches: gleiches Prinzip. Die Frage ist nie, ob die Technik das kann. Die Frage ist, ob man sich traut, Preise auf die Website zu schreiben.
 
-## Was noch offen ist
+## Das Ergebnis
 
-Die Seite ist live, das Angebot ist buchbar. Aber ehrlich: Sichtbarkeit baut sich über Monate auf, nicht über Nacht. Offen sind noch weitere Ratgeber, das Google-Unternehmensprofil und die Verknüpfung mit LinkedIn. Ob und wie die KI-Systeme die Seite aufgreifen, zeigt sich in den nächsten Monaten. Wenn es Zahlen gibt, gibt es hier ein Update.
+Ein Beratungsangebot, das sich ohne Vertrieb verkauft: Der Kunde findet es, versteht es, bucht und bezahlt. Angebot, Telefonat und Nachfassen entfallen. Was bleibt, ist die Beratung vor Ort und die Rechnung aus dem ERP. Die Zeit, die früher im Vorlauf steckte, geht in die eigentliche Arbeit.
 
 ## Häufige Fragen
 
