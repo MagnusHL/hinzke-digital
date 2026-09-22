@@ -12,7 +12,7 @@ Dieser Beitrag zeigt das Konzept: was der Kunde erlebt, was im Hintergrund passi
 
 ## Die Ausgangslage
 
-Sandra Hinzke startet als Hygienebeauftragte ein Beratungsangebot für Pflegedienste, Arztpraxen, Tattoo- und Kosmetikstudios und die Kindertagespflege. Das Problem ist typisch für jedes neue Dienstleistungsangebot:
+Die Volker Hinzke GmbH startet ein Hygiene-Beratungsangebot für Pflegedienste, Arztpraxen, Tattoo- und Kosmetikstudios und die Kindertagespflege. Beraten wird durch eine examinierte Pflegefachkraft mit Fortbildung Hygienebeauftragte, angestellt im Betrieb. Das Problem ist typisch für jedes neue Dienstleistungsangebot:
 
 - Es gibt noch keine Kunden und keine Empfehlungen.
 - Für aktiven Vertrieb (Anrufe, Besuche, Netzwerken) fehlt die Zeit.
@@ -87,7 +87,7 @@ Dafür ist die Seite so gebaut, dass Suchmaschinen und KI-Systeme sie verstehen 
 
 Ein Punkt, der bei der Digitalisierung von Beratung gern untergeht: Ohne Vorgespräch muss die Seite selbst klären, was das Angebot nicht ist. Sonst bucht jemand etwas Falsches.
 
-Deshalb steht auf hygiene-luebeck.de an jeder relevanten Stelle: Sandra Hinzke ist Hygienebeauftragte, keine Hygienefachkraft (das ist eine geschützte Weiterbildung). Keine Beratung für Einrichtungen, die unter die Medizinprodukte-Verordnung fallen. Kein Versprechen, dass eine Prüfung bestanden wird.
+Deshalb steht auf hygiene-luebeck.de an jeder relevanten Stelle: Beraten wird durch eine Hygienebeauftragte, nicht durch eine Hygienefachkraft (das ist eine geschützte Weiterbildung). Keine Beratung für Einrichtungen, die unter die Medizinprodukte-Verordnung fallen. Kein Versprechen, dass eine Prüfung bestanden wird.
 
 Diese Abgrenzung steht in der FAQ, auf den Fachseiten und in den maschinenlesbaren Daten. Wer bucht, weiß, was er bekommt. Das spart hinterher Diskussionen und Rückabwicklungen.
 
